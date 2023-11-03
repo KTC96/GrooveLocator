@@ -1,0 +1,1 @@
+web: gunicorn groove_locator.wsgi
