@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-ktc96-groovelocator-2ut8hj4r2wl.ws-eu105.gitpod.io', 'groove-locator.herokuapp.com']
+ALLOWED_HOSTS = ['8000-ktc96-groovelocator-2ut8hj4r2wl.ws-eu105.gitpod.io', 'groove-locator.herokuapp.com', 'groove-locator-1cf946ce6f56.herokuapp.com']
 
 
 # Application definition
