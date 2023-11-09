@@ -6,4 +6,5 @@ import requests
 
 
 class EventList(generic.ListView):
-    model = Post
+    model = Event
+    template_name = 'index.html'
