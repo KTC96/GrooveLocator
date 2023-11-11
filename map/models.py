@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from cloudinary.models import CloudinaryField
 
 class Event(models.Model):
     title = models.CharField(max_length=250, unique=True, default="test")
@@ -11,6 +12,7 @@ class Event(models.Model):
     event_date = models.DateTimeField(default=timezone.now)
     event_details = models.TextField()
     saved_by = models.ManyToManyField(User, related_name="event_saved", blank=True)
+    image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
         return self.title

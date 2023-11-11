@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+}
+
+.logo {
+    max-height: 100px;
+
+}
+
+.navbar {
+    background-color: #0f2027;
+}
+
+.navbar li a {
+    color: white;
+}
+
+.active {
+    color: purple !important;
+}

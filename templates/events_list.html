@@ -1,4 +1,33 @@
 {% extends "base.html" %} {% block content %}
 <div>Events list</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 mt-3 center">
+      <div class="row">
+        {% for event in event_list%}
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="image-container">
+                {% if "placeholder" in event.image.url %}
+                <img
+                  class="card-img-top"
+                  src="../static/images/pexels-sebastian-ervi-1763067.jpg"
+                />
+                {% else %}
+                <img class="card-img-top" src=" {{ event.image.url }}" />
+                {% endif %}
+                <h2 class="card-title">{{ event.title }}</h2>
+                <p>Event date: {{ event.event_date }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+        <div class="row">{% endif %}{% endfor %}</div>
+      </div>
+    </div>
+  </div>
 
-{%endblock%}
+  {%endblock%}
+</div>
