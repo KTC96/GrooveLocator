@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-ktc96-groovelocator-2ut8hj4r2wl.ws-eu106.gitpod.io', 'groove-locator.herokuapp.com', 'groove-locator-1cf946ce6f56.herokuapp.com']
+ALLOWED_HOSTS = ['8000-ktc96-groovelocator-w32qxjvnay8.ws-eu106.gitpod.io']
 
 
 # Application definition
@@ -141,3 +141,6 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+GOOGLE_API_KEY = 'AIzaSyDDLv6foLba6R_4ZlNosCqsZft_U8ruFEE'
+TICKETMASTER_API_KEY = 'NtclOaEDxrje7WH09PLMkduQRMFWGKz8'
