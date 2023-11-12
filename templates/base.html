@@ -62,7 +62,11 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Saved Events</a>
+              <a
+                class="nav-link {% if request.path == '/saved_events/' %}active{% endif %}"
+                href="{% url 'saved' %}"
+                >Saved Events</a
+              >
             </li>
           </ul>
           <span class="navbar-text"> Navbar text with an inline element </span>
