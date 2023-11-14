@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block content %}{% load static %}
 <div class="container-fluid" id="map"></div>
 
 <script>
@@ -73,5 +73,22 @@
     }
   }
 </script>
+
+<!--Jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!--JS bootstrap-->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+  integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+  crossorigin="anonymous"
+></script>
+<!--JS-->
+
+<!--Google Maps API-->
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDLv6foLba6R_4ZlNosCqsZft_U8ruFEE&callback=initMap"
+  async
+  defer
+></script>
 
 {% endblock %}

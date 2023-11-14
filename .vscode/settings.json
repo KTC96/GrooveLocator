@@ -29,5 +29,8 @@
       "groovelocator",
       "herokuapp",
       "Summernote"
-   ]
+   ],
+   "[html]": {
+      "editor.defaultFormatter": "HookyQR.beautify"
+   }
 }

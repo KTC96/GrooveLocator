@@ -69,27 +69,35 @@
               >
             </li>
           </ul>
-          <span class="navbar-text"> Navbar text with an inline element </span>
+          <span class="navbar-text">
+            <ul>
+              {% if user.is_authenticated%}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_signup' %}"
+                  >Sign Up</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+              </li>
+            </ul>
+            {% endif %}
+          </span>
         </div>
       </div>
     </nav>
     {% block content%} {% endblock content%}
     <footer></footer>
-    <!--Jquery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
     <!--JS bootstrap-->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
       integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
       crossorigin="anonymous"
-    ></script>
-    <!--JS-->
-    <script src="{% static 'js/google_maps.js' %}"></script>
-    <!--Google Maps API-->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDLv6foLba6R_4ZlNosCqsZft_U8ruFEE&callback=initMap"
-      async
-      defer
     ></script>
   </body>
 </html>
