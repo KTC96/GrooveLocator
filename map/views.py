@@ -26,6 +26,24 @@ class EventList(generic.ListView):
     paginate_by = 10
 
 
+class EventDetails(View):
+    def get(self, request, slug, *args, **kwargs):
+        event = get_object_or_404(Event, slug=slug)
+        details = event.event_details
+        saved_by = False
+        if event.saved_by.filter(id=self.request.user.id).exists():
+            saved_by = True
+
+        return render(
+            request,
+            "event_details.html",
+            {
+                "event": event,
+                "event_details": details,
+                "saved_by": saved_by
+            },
+        )
+
 
 class SavedEventList(generic.ListView):
    model = SavedEvent
