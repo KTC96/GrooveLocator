@@ -13,6 +13,12 @@ import requests
 class home(TemplateView):
     template_name = 'index.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        events = Event.objects.all()
+        context['events'] = events
+        return context
+
 class EventList(generic.ListView):
     model = Event
     queryset = Event.objects.filter(event_date__gte=date.today()).order_by('-event_date')

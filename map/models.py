@@ -9,10 +9,13 @@ class Event(models.Model):
     event_genre = models.CharField(max_length=50)
     event_price = models.DecimalField(max_digits=10, decimal_places=2)
     event_location = models.CharField(max_length=250)
+    event_venue = models.CharField(max_length=200, null=True)
     event_date = models.DateTimeField(default=timezone.now)
     event_details = models.TextField()
     saved_by = models.ManyToManyField(User, related_name="event_saved", blank=True)
     image = CloudinaryField('image', default='placeholder')
+    latitude = models.FloatField(max_length=200, null=True)
+    longitude = models.FloatField(max_length=200, null=True)
 
     def __str__(self):
         return self.title

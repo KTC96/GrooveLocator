@@ -1,4 +1,85 @@
 {% extends "base.html" %} {% block content %}
 <div class="container-fluid" id="map"></div>
 
-{%endblock%}
+<script>
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 0, lng: 0 },
+        zoom: 10
+    });
+
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var userLatLng = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+            map.setCenter(userLatLng);
+
+
+        }, function () {
+            handleLocationError(true, map.getCenter());
+        });
+    } else {
+
+        handleLocationError(false, map.getCenter());
+    }
+
+    function handleLocationError(browserHasGeolocation, pos) {
+        var infoWindow = new google.maps.InfoWindow();
+
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+            'Error: The Geolocation service failed.' :
+            'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+    }
+
+
+
+      var events = [
+          {% for event in events %}
+              {
+                  "title": "{{ event.title }}",
+                  "lat": {{ event.latitude }},
+                  "lng": {{ event.longitude }},
+                  "event_genre": "{{ event.event_genre }}",
+                  "event_venue": "{{ event.event_venue }}",  // Add other necessary fields
+                  "event_date": "{{ event.event_date }}",
+                  "url": "{{ event.url }}"
+              },
+          {% endfor %}
+      ];
+
+      for (var i = 0; i < events.length; i++) {
+          var marker = new google.maps.Marker({
+              position: { lat: events[i].lat, lng: events[i].lng },
+              map: map,
+              title: events[i].title
+          });
+
+
+          var infowindow = new google.maps.InfoWindow({
+              content: `<div>
+                  <h2>${events[i].title}</h2>
+                  <p>Genre: ${events[i].event_genre}</p>
+
+                  <p>Venue: ${events[i].event_venue}</p>
+                  <p>Date: ${events[i].event_date}</p>
+
+                  <p><a href="#" >Save event <i class="far fa-heart"></i></a></p>
+                  <a href="${events[i].url}" target="_blank">Event Details</a>
+              </div>`
+          });
+
+
+          marker.addListener('click', function() {
+              infowindow.open(map, marker);
+          });
+      }
+  }
+</script>
+
+{% endblock %}
