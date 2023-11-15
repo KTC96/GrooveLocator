@@ -35,7 +35,7 @@ GOOGLE_API_KEY = os.environ.get('GOOGLE_API_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-ktc96-groovelocator-w32qxjvnay8.ws-eu106.gitpod.io']
+ALLOWED_HOSTS = ['8000-ktc96-groovelocator-w32qxjvnay8.ws-eu106.gitpod.io', 'groove-locator-1cf946ce6f56.herokuapp.com']
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
