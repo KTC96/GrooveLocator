@@ -29,6 +29,8 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
+CLOUDINARY_URL= os.environ.get('CLOUDINARY_URL')
+GOOGLE_API_KEY = os.environ.get('GOOGLE_API_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -154,6 +156,4 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-GOOGLE_API_KEY = 'AIzaSyDDLv6foLba6R_4ZlNosCqsZft_U8ruFEE'
-TICKETMASTER_API_KEY = 'NtclOaEDxrje7WH09PLMkduQRMFWGKz8'
-CLOUDINARY_URL = 'cloudinary://641258792396681:DeyQb4TKOt9pjPCihQGFVzsQh2g@dgtct7pzk'
+
