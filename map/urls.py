@@ -7,4 +7,6 @@ urlpatterns = [
     path('events_list/', views.EventList.as_view(), name="events"),
     path('saved_events/', views.SavedEventList.as_view(), name="saved"),
     path('<slug:slug>/', views.EventDetails.as_view(), name="event_details"),
+    path('save_event/<slug:slug>/', views.SaveEvent.as_view(), name='save_event'),
+
 ]

@@ -1,13 +1,11 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import get_object_or_404, reverse, render
 from django.views import generic, View
 from .models import Event, SavedEvent
-from django.shortcuts import render
 from django.views.generic import TemplateView
 from datetime import date
-from django.http import HttpResponseRedirect
-from django.core.serializers import serialize
-from django.http import JsonResponse
-import requests
+from django.http import HttpResponseRedirect, JsonResponse
+from django.contrib import messages
+
 
 
 class home(TemplateView):
@@ -30,9 +28,9 @@ class EventDetails(View):
     def get(self, request, slug, *args, **kwargs):
         event = get_object_or_404(Event, slug=slug)
         details = event.event_details
-        saved_by = False
-        if event.saved_by.filter(id=self.request.user.id).exists():
-            saved_by = True
+        saved = False
+        if event.saved.filter(id=self.request.user.id).exists():
+            saved = True
 
         return render(
             request,
@@ -40,25 +38,37 @@ class EventDetails(View):
             {
                 "event": event,
                 "event_details": details,
-                "saved_by": saved_by
+                "saved": saved
             },
         )
 
 
 class SavedEventList(generic.ListView):
-   model = SavedEvent
-   template_name = 'saved_events.html'
-   paginate_by = 5
+    model = SavedEvent
+    template_name = 'saved_events.html'
+    paginate_by = 5
 
-class SavedEvent(View):
+    def get_queryset(self):
+        if self.request.user.is_authenticated:
+            saved_events = SavedEvent.objects.filter(user=self.request.user)
+            event_ids = saved_events.values_list('event_id', flat=True)
+            return Event.objects.filter(id__in=event_ids)
+        else:
+            
+            messages.warning(self.request, 'Login to save events')
+            return Event.objects.none()
 
-    def event(self, request, slug):
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+class SaveEvent(View):
+    def post(self, request, slug, *args, **kwargs):
         event = get_object_or_404(Event, slug=slug)
 
-        if event.saved_by.filter(id=request.user.id).exists():
-            event.saved_by.remove(request.user)
+        if event.saved.filter(id=request.user.id).exists():
+            event.saved.remove(request.user)
         else:
-            event.saved_by.add(request.user)
+            event.saved.add(request.user)
 
-        return HttpResponseRedirect(reverse('home', args=[slug]))
-
+        return HttpResponseRedirect(reverse('event_details', args=[slug]))

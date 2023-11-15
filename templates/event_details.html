@@ -1,27 +1,35 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 <div class="container">
   {% if "placeholder" in event.image.url %}
-  <img
-    class="card-img-top"
-    src="{% static 'images/pexels-sebastian-ervi-1763067.jpg' %}"
-    alt="Placeholder Image"
-  />
+  <img class="card-img-top" src="{% static 'images/pexels-sebastian-ervi-1763067.jpg' %}" alt="Placeholder Image" />
   {% else %}
-  <img
-    src="{{ event.image.url}}"
-    alt="{{ event.title}}"
-    width="1000"
-    height="500"
-  />
+  <img src="{{ event.image.url}}" alt="{{ event.title}}" width="1000" height="500" />
   {% endif %}
   <div class="row">
     <div class="col">{{ event.title }}</div>
   </div>
   <div class="row">
-    <div class="col"><p>{{ event.event_details|safe }}</p></div>
-    <div class="col"></div>
-    <div class="col"></div>
+    <div class="col">
+      <p>{{ event.event_details|safe }}</p>
+    </div>
+    <div class="col">
+      {% if user.is_authenticated %}
+      <form class="d-inline" action="{% url 'save_event' event.slug %}" method="POST">
+        {% csrf_token %}
+        {% if saved %}
+        <button type="submit" name="save_id" value="{{event.slug}}" class="btn-like"><i
+            class="fa-solid fa-heart"></i></button>
+        {% else %}
+        <button type="submit" name="save_id" value="{{event.slug}}" class="btn-like"><i
+            class="fa-regular fa-heart"></i></button>
+        {% endif %}
+      </form>
+      {% else %}
+      <span class="text-secondary"><i class="far fa-heart"></i></span>
+      {% endif %}
+      <!-- The number of likes goes before the closing strong tag -->
+      <span class="text-secondary">{{ event.number_saved_event }} </span>
+    </div>
   </div>
-</div>
-
-{% endblock %}
+  <script src="https://kit.fontawesome.com/64b9a22ea9.js" crossorigin="anonymous"></script>
+  {% endblock %}

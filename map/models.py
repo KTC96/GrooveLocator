@@ -12,7 +12,7 @@ class Event(models.Model):
     event_venue = models.CharField(max_length=200, null=True)
     event_date = models.DateTimeField(default=timezone.now)
     event_details = models.TextField()
-    saved_by = models.ManyToManyField(User, related_name="event_saved", blank=True)
+    saved = models.ManyToManyField(User, related_name="saved", blank=True)
     image = CloudinaryField('image', default='placeholder')
     latitude = models.FloatField(max_length=200, null=True)
     longitude = models.FloatField(max_length=200, null=True)
@@ -21,7 +21,7 @@ class Event(models.Model):
         return self.title
     
     def number_saved_event(self):
-        return self.saved_by.count()
+        return self.saved.count()
 
 class SavedEvent(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

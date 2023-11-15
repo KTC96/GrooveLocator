@@ -29,13 +29,12 @@
 .login {
     width: 50%;
     max-width: 500px;
-    min-width: 300px;
+    min-width: 400px;
     padding: 50px;
     background-color: rgba(15, 32, 39, 0.6);
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    margin: 50px 0 100px 0;
     color: white;
 
 }
@@ -49,6 +48,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+
 
 }
 
