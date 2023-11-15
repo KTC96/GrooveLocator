@@ -37,11 +37,11 @@
           </li>
           <li class="nav-item">
             <a class="nav-link {% if request.path == '/events_list/' %}active{% endif %}"
-              href="{% url 'events' %}">Events</a>
+              href="{% url 'events_list' %}">Events</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {% if request.path == '/saved_events/' %}active{% endif %}"
-              href="{% url 'saved' %}">Saved Events</a>
+              href="{% url 'saved_events' %}">Saved Events</a>
           </li>
         </ul>
         <span class="navbar-text">
