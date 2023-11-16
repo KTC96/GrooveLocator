@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +12,7 @@
   <script src="https://kit.fontawesome.com/64b9a22ea9.js" crossorigin="anonymous"></script>
   <!--CSS stylesheet-->
   <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+  
 
   <title>Groove Locator</title>
 </head>
@@ -22,7 +22,7 @@
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'home' %}"><img class="logo img-fluid"
-          src="#" />
+          src="{% static 'images/logo.png' %}"/>
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
