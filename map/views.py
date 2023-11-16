@@ -5,6 +5,7 @@ from django.views.generic import TemplateView
 from datetime import date
 from django.http import HttpResponseRedirect, JsonResponse
 from django.contrib import messages
+from .forms import CommentForm
 
 
 
@@ -38,7 +39,8 @@ class EventDetails(View):
             {
                 "event": event,
                 "event_details": details,
-                "saved": saved
+                "saved": saved,
+                "comment_form": CommentForm()
             },
         )
 
