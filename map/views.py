@@ -44,17 +44,15 @@ class EventDetails(View):
 
 
 class SavedEventList(generic.ListView):
-    model = SavedEvent
+    model = Event
     template_name = 'saved_events.html'
     paginate_by = 5
 
     def get_queryset(self):
         if self.request.user.is_authenticated:
-            saved_events = SavedEvent.objects.filter(user=self.request.user)
-            event_ids = saved_events.values_list('event_id', flat=True)
-            return Event.objects.filter(id__in=event_ids)
+            saved_events = self.request.user.saved.all()
+            return saved_events
         else:
-            
             messages.warning(self.request, 'Login to save events')
             return Event.objects.none()
 

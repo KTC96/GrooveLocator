@@ -9,4 +9,6 @@ class EventAdmin(SummernoteModelAdmin):
     list_display = ('title','event_date', 'event_location')
     search_fields = ('title','event_location')
     summernote_fields = ('event_details')
+
+    
     
