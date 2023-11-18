@@ -48,7 +48,7 @@ class EventDetails(View):
                 "event_details": details,
                 "saved": saved,
                 "comment_form": CommentForm(instance=user_info),
-                "comments": comments,  # Pass comments to the template
+                "comments": comments,
             },
         )
 
@@ -69,10 +69,8 @@ class EventDetails(View):
             comment.saved_event, _ = SavedEvent.objects.get_or_create(user=request.user, event=event)
             comment.save()
 
-            # Redirect to the same page to handle a GET request
             return HttpResponseRedirect(reverse('event_details', args=[slug]))
 
-        # If the form is not valid, retrieve comments for the current event
         comments = EventComment.objects.filter(saved_event__event=event)
 
         return render(
@@ -83,7 +81,7 @@ class EventDetails(View):
                 "event_details": event.event_details,
                 "saved": saved,
                 "comment_form": comment_form,
-                "comments": comments,  # Pass comments to the template
+                "comments": comments, 
             },
         )
 

@@ -43,6 +43,6 @@ class EventComment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     saved_event = models.ForeignKey(SavedEvent, on_delete=models.CASCADE)
     comment_text = models.TextField()
-    hotel_details = models.TextField(blank=True, null=True)
+    hotel_details = models.TextField(max_length=150,blank=True, null=True)
     transport_details = models.TextField(blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True)

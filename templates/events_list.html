@@ -8,13 +8,20 @@
         <div class="image-container">
           {% if "placeholder" in event.image.url %}
           <a href="{% url 'event_details' event.slug %}">
-            <img class="card-img-top" src="https://images.pexels.com/photos/1763067/pexels-photo-1763067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="Placeholder Image" />
+            <img
+              class="card-img-top"
+              src="https://images.pexels.com/photos/1763067/pexels-photo-1763067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Placeholder Image"
+            />
           </a>
 
           {% else %}
           <a href="{% url 'event_details' event.slug%}">
-            <img class="card-img-top" src="{{ event.image.url }}" alt="{{ event.title }} Image" />
+            <img
+              class="card-img-top"
+              src="{{ event.image.url }}"
+              alt="{{ event.title }} Image"
+            />
           </a>
           {% endif %}
         </div>
