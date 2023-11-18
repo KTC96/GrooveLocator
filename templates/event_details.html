@@ -35,6 +35,7 @@
       <span class="text-secondary">{{ event.number_saved_event }} </span>
       <div>
         {% if user.is_authenticated %}
+        {% if saved %}
         <p class="d-inline-flex gap-1">
           <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
             data-bs-target="#collapseExample{{ event.id }}" aria-expanded="false"
@@ -45,12 +46,13 @@
         <div class="collapse" id="collapseExample{{ event.id }}">
           <div class="card card-body">
             <form method="POST" style="margin-top: 1.3em;">
-              {% csrf_token %}
               {{ comment_form | crispy }}
+              {% csrf_token %}
               <button type="submit" class="btn btn-signup btn-lg">Submit</button>
             </form>
           </div>
         </div>
+        {% endif %}
         {% endif %}
       </div>
     </div>
