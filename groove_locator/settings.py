@@ -35,9 +35,13 @@ GOOGLE_API_KEY = os.environ.get('GOOGLE_API_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-ktc96-groovelocator-w32qxjvnay8.ws-eu106.gitpod.io', 'groove-locator-1cf946ce6f56.herokuapp.com']
+ALLOWED_HOSTS = ['8000-ktc96-groovelocator-w32qxjvnay8.ws-eu106.gitpod.io', 'https://8000-ktc96-groovelocator-w32qxjvnay8.ws-eu106.gitpod.io' ]
+
+# CSRF_TRUSTED_ORIGINS=['https://8000-ktc96-groovelocator-w32qxjvnay8.ws-eu106.gitpod.io']
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
 # Application definition
@@ -147,7 +151,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
