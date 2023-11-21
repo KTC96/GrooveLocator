@@ -1,6 +1,10 @@
+/* Global styles ---------------------------------------- */
+
+
 * {
   margin: 0;
 }
+
 
 .logo {
   max-height: 100px;
@@ -14,14 +18,56 @@
   color: white;
 }
 
+.navbar-nav {
+  --bs-nav-link-hover-color: #6600cc !important;
+}
+
 .active {
   color: #6600cc !important;
+}
+
+/* Index ---------------------------------------- */
+
+.about {
+  background-color: #0f2027;
+  color: white;
+  padding: 20px;
+}
+/* 
+.main-heading,
+.about-text,
+.button-col {
+  padding: 20px;
+} */
+
+.row-center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
 #map {
   width: 100vw;
   height: 50vh;
 }
+
+.join-btn {
+  background-color: #6600cc;
+  border-color: #6600cc;
+  max-width: 50%;
+  min-width: 50%;
+}
+
+.user-testimonials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* Login/ Signup---------------------------------------- */
 
 .login {
   width: 50%;
@@ -45,6 +91,7 @@
   align-items: center;
   justify-content: center;
 }
+
 
 #id_password,
 #id_login {
