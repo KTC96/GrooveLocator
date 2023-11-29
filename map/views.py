@@ -1,11 +1,12 @@
 from django.shortcuts import get_object_or_404, reverse, render
 from django.views import generic, View
 from .models import Event, SavedEvent, EventComment
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 from datetime import date
 from django.http import HttpResponseRedirect, JsonResponse
 from django.contrib import messages
 from .forms import CommentForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 
@@ -18,7 +19,7 @@ class home(TemplateView):
         context['events'] = events
         return context
 
-class EventList(generic.ListView):
+class EventList(ListView):
     model = Event
     queryset = Event.objects.filter(event_date__gte=date.today()).order_by('-event_date')
     template_name = 'events_list.html'
@@ -85,7 +86,7 @@ class EventDetails(View):
             },
         )
 
-class SavedEventList(generic.ListView):
+class SavedEventList(LoginRequiredMixin, ListView):
     model = Event
     template_name = 'saved_events.html'
     paginate_by = 5
@@ -102,7 +103,7 @@ class SavedEventList(generic.ListView):
         context = super().get_context_data(**kwargs)
         return context
 
-class SaveEvent(View):
+class SaveEvent(LoginRequiredMixin, View):
     def post(self, request, slug, *args, **kwargs):
         event = get_object_or_404(Event, slug=slug)
 
