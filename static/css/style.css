@@ -11,7 +11,7 @@
 }
 
 .navbar {
-  background-color: #0f2027;
+  background-color: #0f2027 !important;
 }
 
 .navbar li a {
@@ -28,6 +28,10 @@
 
 .copyright {
   background-color: rgba(102, 0, 204,0.5)
+}
+
+.relative {
+  position: relative;
 }
 
 /* Index ---------------------------------------- */
@@ -51,9 +55,11 @@
   padding: 20px;
 }
 
+
 #map {
   width: 100vw;
   height: 50vh;
+  max-height: 50vh;
 }
 
 .join-btn {
@@ -63,13 +69,39 @@
   min-width: 50%;
 }
 
+.legend{
+  position: absolute;
+  bottom: 50px;
+  left: 10px;
+  background-color: rgba(102, 0, 204, 0.5);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 70%;
+  overflow-y: auto;
+}
 
+.legend-btn {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  padding: 10px;
+}
+
+.btn-primary {
+  background-color: #6600cc;
+  border-color: #6600cc;
+}
+
+.btn-primary:hover {
+  background-color: #521093;
+  border-color: #521093;
+}
 
 .legend-img {
   height: 20px;
   width: 20px;
 }
-
 
 
 .user-testimonials {
@@ -130,5 +162,12 @@ footer {
   background-color: #ac2bac;
   border-color: #ac2bac;
 }
+
+/* @media screen and (min-height: 598px) {
+  .legend-btn {
+    bottom: 31%;
+  }
+} */
+
 
 
