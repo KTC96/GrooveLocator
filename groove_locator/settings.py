@@ -41,6 +41,8 @@ ALLOWED_HOSTS = ['8000-ktc96-groovelocator-w32qxjvnay8.ws-eu106.gitpod.io', 'htt
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
+os.environ["DEBUG"]= 'DEVELOPMENT' 
+
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
