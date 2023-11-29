@@ -3,6 +3,7 @@
 
 * {
   margin: 0;
+  color: white;
 }
 
 
@@ -165,11 +166,4 @@ footer {
 
 
 /* Event_details---------------------------------------- */
-
-.event-info {
-  color: white  !important;
-  background-color: #0f2027 !important;
-}
-
-
 
