@@ -23,7 +23,7 @@ class EventList(ListView):
     model = Event
     queryset = Event.objects.filter(event_date__gte=date.today()).order_by('-event_date')
     template_name = 'events_list.html'
-    paginate_by = 10
+    paginate_by = 5
 
 
 class EventDetails(View):

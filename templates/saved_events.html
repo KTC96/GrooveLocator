@@ -5,13 +5,6 @@
 <h1>Your Saved Events</h1>
 
 <div class="container mt-4">
-    <!-- {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-            {% endfor %}
-    </ul> -->
-    {% endif %}
     {% if user.is_authenticated %}
     <div class="row">
         {% for event in object_list %}
@@ -34,18 +27,7 @@
                     <p class="card-text">Date: {{ event.event_date }}</p>
                     <p class="card-text">{{ event.event_location }}</p>
                     <p class="d-inline-flex gap-1">
-                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseExample{{ event.id }}" aria-expanded="false"
-                            aria-controls="collapseExample{{ event.id }}">
-                            Add your event details
-                        </button>
-                    </p>
-                    <div class="collapse" id="collapseExample{{ event.id }}">
-                        <div class="card card-body">
-                            Some placeholder content for the collapse component. This panel is hidden by default but
-                            revealed when the user activates the relevant trigger.
-                        </div>
-                    </div>
+                        
                 </div>
             </div>
         </div>
