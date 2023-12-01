@@ -43,6 +43,36 @@ h1, h2,h3, h4,h5 {
   background-color: rgba(102, 0, 204,0.5)
 }
 
+
+
+.gm-style-iw-d {
+  min-height: 250px !important;
+  background-color: #6600cc !important;
+  overflow: hidden !important;
+}
+
+.gm-style-iw, .gm-style-iw-c{
+  background-color: #6600cc !important;
+}
+
+.infowindow-style {
+  color: white;
+}
+
+.infowindow-btn {
+  border-color: #0f2027;
+  color: white;
+  text-decoration:none ;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #0f2027;
+}
+
+.infowindow-btn:hover {
+  border-color: white;
+}
+
+
 .relative {
   position: relative;
 }

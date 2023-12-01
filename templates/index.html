@@ -154,12 +154,12 @@
             });
 
             var infowindow = new google.maps.InfoWindow({
-                content: `<div>
+                content: `<div style="background-color: #6600cc; padding: 10px;">
                     <h2>${event.title}</h2>
-                    <p>Genre: ${event.event_genre}</p>
-                    <p>Venue: ${event.event_venue}</p>
-                    <p>Date: ${event.event_date}</p>
-                    <p><a href="${event.url}" target="_blank">Event Details</a></p>
+                    <p class="infowindow-style">Genre: ${event.event_genre}</p>
+                    <p class="infowindow-style">Venue: ${event.event_venue}</p>
+                    <p class="infowindow-style">Date: ${event.event_date}</p>
+                    <button class="infowindow-btn" onclick="window.open('${event.url}', '_blank')">Event Details</button>
                 </div>`
             });
 
