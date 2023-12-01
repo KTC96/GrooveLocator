@@ -1,12 +1,11 @@
 from django.shortcuts import get_object_or_404, reverse, render
-from django.views import generic, View
 from .models import Event, SavedEvent, EventComment
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, View
 from datetime import date
 from django.http import HttpResponseRedirect, JsonResponse
-from django.contrib import messages
 from .forms import CommentForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 
 
@@ -93,10 +92,8 @@ class SavedEventList(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         if self.request.user.is_authenticated:
-            saved_events = self.request.user.saved.all()
-            return saved_events
+            return self.request.user.saved.all()
         else:
-            messages.warning(self.request, 'Login to save events')
             return Event.objects.none()
 
     def get_context_data(self, **kwargs):
