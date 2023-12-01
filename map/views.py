@@ -23,7 +23,7 @@ class EventList(ListView):
     model = Event
     queryset = Event.objects.filter(event_date__gte=date.today()).order_by('-event_date')
     template_name = 'events_list.html'
-    paginate_by = 5
+    paginate_by = 9
 
 
 class EventDetails(View):
@@ -89,7 +89,7 @@ class EventDetails(View):
 class SavedEventList(LoginRequiredMixin, ListView):
     model = Event
     template_name = 'saved_events.html'
-    paginate_by = 5
+    paginate_by = 9
 
     def get_queryset(self):
         if self.request.user.is_authenticated:
