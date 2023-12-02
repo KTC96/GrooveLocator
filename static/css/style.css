@@ -9,6 +9,10 @@ body {
   background-color: #0f2027;
 }
 
+.container {
+  min-height: 500px;
+}
+
 h1, h2,h3, h4,h5 {
   color: white;
 }
@@ -185,6 +189,8 @@ nav li {
 
 footer {
   background-color: #0f2027;
+  max-height: 10%;
+  
 }
 .facebook {
   background-color: #3b5998;

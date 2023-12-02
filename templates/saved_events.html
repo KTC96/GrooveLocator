@@ -5,8 +5,23 @@
 <h1>Your Saved Events</h1>
 
 <div class="container mt-4">
-    {% if user.is_authenticated %}
+  
     <div class="row">
+        <form method="get" action="{% url 'saved_events' %}">
+            <label for="event_genre">Select Genre:</label>
+            <select name="event_genre" id="event_genre">
+                <option value="" {% if not selected_genre %}selected{% endif %}>All Genres</option>
+                {% for genre in all_genres %}
+                <option value="{{ genre }}" {% if genre == selected_genre %}selected{% endif %}>{{ genre }}</option>
+                {% endfor %}
+            </select>
+            <label for="event_location">Select City:</label>
+            <input type="text" name="event_location" id="event_location" class="selectize" value="{{ selected_city }}"
+                placeholder="All locations" />
+            <label for="event_date">Select Date:</label>
+            <input type="date" name="event_date" id="event_date" value="{{ selected_date }}">
+            <button type="submit">Filter</button>
+        </form>
         {% for event in object_list %}
         <div class="col-md-4 mb-4">
             <div class="card h-100">
@@ -60,14 +75,14 @@
         </ul>
     </nav>
     {% endif %}
-    {% endif %}
+    
 </div>
-
-
-
-
-
-
-
-
 {%endblock%}
+<script>
+    $(document).ready(function () {
+        $('#event_location').selectize({
+            create: true,
+            sortField: 'text'
+        });
+    });
+</script>

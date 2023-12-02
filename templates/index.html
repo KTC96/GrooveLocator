@@ -4,6 +4,7 @@
     <div class="container-fluid relative">
         <div class="row">
             <div>
+                <!--filter form for genre and date input-->
                  <form method="get" action="{% url 'home' %}">
                      <label for="event_genre">Select Genre:</label>
                      <select name="event_genre" id="event_genre">
@@ -13,10 +14,13 @@
                          </option>
                          {% endfor %}
                      </select>
-                     <label for="event_genre">Select City:</label>
+                     <label for="event_date">Select Date:</label>
+                     <input type="date" name="event_date" id="event_date" value="{{ selected_date }}">
                      <button type="submit">Filter</button>
                  </form>
+                
             </div>
+            <!--Google map-->
             <div class="col-12 col-lg-9" id="map"></div>
             <div class="col-12 col-lg-3">
                 <p class="legend-btn">
@@ -26,6 +30,7 @@
                         Toggle Legend
                     </button>
                 </p>
+                <!--Legend for map based on event genre-->
                 <div class="legend collapse collapse-horizontal" id="legendContent">
                     
                     <table class="table table-hover">
@@ -133,12 +138,14 @@
             {% endfor %}
         ];
 
-        // Update events array based on the selected genre and city
+        // Update events array based on the selected genre and date
         var selectedGenre = "{{ selected_genre }}";
+        var selectedDate = "{{ selected_date }}";
 
-        if (selectedGenre) {
+        if (selectedGenre || selectedDate) {
             events = events.filter(function (event) {
-                return (!selectedGenre || event.event_genre === selectedGenre);
+                return (!selectedGenre || event.event_genre === selectedGenre) &&
+                       (!selectedDate|| event.event_date === selectedDate);
             });
         }
 
@@ -146,6 +153,8 @@
         for (var i = 0; i < events.length; i++) {
             createMarker(events[i]);
         }
+
+        //Custom markers for events
 
         function createMarker(event) {
             var markerImages = {
@@ -255,8 +264,10 @@
     {% endif %}
 </section>
 
+
 <!--Google Maps API-->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDLv6foLba6R_4ZlNosCqsZft_U8ruFEE&callback=initMap" async
     defer></script>
 
 {% endblock %}
+

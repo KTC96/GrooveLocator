@@ -16,6 +16,7 @@ class home(TemplateView):
         queryset = Event.objects.filter(event_date__gte=date.today()).order_by('-event_date')
         selected_genre = self.request.GET.get('event_genre')
         selected_city = self.request.GET.get('event_location')
+        selected_date = self.request.GET.get('event_date')
 
         # Additional filtering based on selected genre if provided
         if selected_genre:
@@ -23,6 +24,9 @@ class home(TemplateView):
 
         if selected_city:
             queryset = queryset.filter(event_location=selected_city)
+
+        if selected_date:
+            queryset = queryset.filter(event_date=selected_date)
 
         return queryset
 
@@ -34,6 +38,8 @@ class home(TemplateView):
         context['all_genres'] = Event.objects.values_list('event_genre', flat=True).distinct()  
         context['selected_city'] = self.request.GET.get('event_location', '')
         context['all_locations'] = Event.objects.values_list('event_location', flat=True).distinct()   
+        context['selected_date'] = self.request.GET.get('event_date', '')
+        context['all_dates'] = Event.objects.dates('event_date', 'day', order='DESC')
 
         return context
 
@@ -46,13 +52,17 @@ class EventList(ListView):
         queryset = Event.objects.filter(event_date__gte=date.today()).order_by('-event_date')
         selected_genre = self.request.GET.get('event_genre')
         selected_city = self.request.GET.get('event_location')
+        selected_date = self.request.GET.get('event_date')
 
-        # Additional filtering based on selected genre if provided
+       
         if selected_genre:
             queryset = queryset.filter(event_genre=selected_genre)
 
         if selected_city:
             queryset = queryset.filter(event_location=selected_city)
+        
+        if selected_date:
+            queryset = queryset.filter(event_date=selected_date)
 
         return queryset
 
@@ -61,7 +71,9 @@ class EventList(ListView):
         context['selected_genre'] = self.request.GET.get('event_genre', '')  
         context['all_genres'] = Event.objects.values_list('event_genre', flat=True).distinct()  
         context['selected_city'] = self.request.GET.get('event_location', '')
-        context['all_locations'] = Event.objects.values_list('event_location', flat=True).distinct()   
+        context['all_locations'] = Event.objects.values_list('event_location', flat=True).distinct()
+        context['selected_date'] = self.request.GET.get('event_date', '')
+        context['all_dates'] = Event.objects.dates('event_date', 'day', order='DESC')
 
         return context
 
@@ -136,10 +148,35 @@ class SavedEventList(LoginRequiredMixin, ListView):
         else:
             return Event.objects.none()
 
+        queryset = Event.objects.filter(event_date__gte=date.today()).order_by('-event_date')
+        selected_genre = self.request.GET.get('event_genre')
+        selected_city = self.request.GET.get('event_location')
+        selected_date = self.request.GET.get('event_date')
+
+       
+        if selected_genre:
+            queryset = queryset.filter(event_genre=selected_genre)
+
+        if selected_city:
+            queryset = queryset.filter(event_location=selected_city)
+        
+        if selected_date:
+            queryset = queryset.filter(event_date=selected_date)
+
+        return queryset
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        return context
+        context = super().get_context_data(**kwargs)
+        context['selected_genre'] = self.request.GET.get('event_genre', '')  
+        context['all_genres'] = Event.objects.values_list('event_genre', flat=True).distinct()  
+        context['selected_city'] = self.request.GET.get('event_location', '')
+        context['all_locations'] = Event.objects.values_list('event_location', flat=True).distinct()
+        context['selected_date'] = self.request.GET.get('event_date', '')
+        context['all_dates'] = Event.objects.dates('event_date', 'day', order='DESC')
 
+        return context
+    
 class SaveEvent(LoginRequiredMixin, View):
     def post(self, request, slug, *args, **kwargs):
         event = get_object_or_404(Event, slug=slug)

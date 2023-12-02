@@ -11,6 +11,8 @@
     </select>
     <label for="event_location">Select City:</label>
     <input type="text" name="event_location" id="event_location" class="selectize" value="{{ selected_city }}" placeholder="All locations"/>
+    <label for="event_date">Select Date:</label>
+    <input type="date" name="event_date" id="event_date" value="{{ selected_date }}">
     <button type="submit">Filter</button>
   </form>
   <div class="row" id="event-list-container">
@@ -82,3 +84,4 @@
     });
   });
 </script>
+
