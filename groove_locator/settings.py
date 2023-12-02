@@ -43,7 +43,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # os.environ["DEBUG"]= 'DEVELOPMENT' 
 
-DEBUG = False
+DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 

@@ -3,6 +3,20 @@
 {% block content %} 
     <div class="container-fluid relative">
         <div class="row">
+            <div>
+                 <form method="get" action="{% url 'home' %}">
+                     <label for="event_genre">Select Genre:</label>
+                     <select name="event_genre" id="event_genre">
+                         <option value="" {% if not selected_genre %}selected{% endif %}>All Genres</option>
+                         {% for genre in all_genres %}
+                         <option value="{{ genre }}" {% if genre == selected_genre %}selected{% endif %}>{{ genre }}
+                         </option>
+                         {% endfor %}
+                     </select>
+                     <label for="event_genre">Select City:</label>
+                     <button type="submit">Filter</button>
+                 </form>
+            </div>
             <div class="col-12 col-lg-9" id="map"></div>
             <div class="col-12 col-lg-3">
                 <p class="legend-btn">
@@ -105,8 +119,6 @@
             infoWindow.open(map);
         }
 
-        
-
         var events = [
             {% for event in events %}
             {
@@ -121,27 +133,34 @@
             {% endfor %}
         ];
 
+        // Update events array based on the selected genre and city
+        var selectedGenre = "{{ selected_genre }}";
+
+        if (selectedGenre) {
+            events = events.filter(function (event) {
+                return (!selectedGenre || event.event_genre === selectedGenre);
+            });
+        }
+
+        // Create markers for the updated events
         for (var i = 0; i < events.length; i++) {
             createMarker(events[i]);
         }
 
         function createMarker(event) {
-
             var markerImages = {
-            "House": "https://cdn-icons-png.flaticon.com/128/11515/11515653.png",
-            "Techno": "https://cdn-icons-png.flaticon.com/128/6707/6707113.png",
-            "Drum and Bass": "https://cdn-icons-png.flaticon.com/128/10413/10413920.png",
-            "Electro": "https://cdn-icons-png.flaticon.com/128/252/252851.png",
-            "Trance" : "https://cdn-icons-png.flaticon.com/128/741/741535.png",
-            "Tech House" : "https://cdn-icons-png.flaticon.com/128/9254/9254089.png"
-            
+                "House": "https://cdn-icons-png.flaticon.com/128/11515/11515653.png",
+                "Techno": "https://cdn-icons-png.flaticon.com/128/6707/6707113.png",
+                "Drum and Bass": "https://cdn-icons-png.flaticon.com/128/10413/10413920.png",
+                "Electro": "https://cdn-icons-png.flaticon.com/128/252/252851.png",
+                "Trance": "https://cdn-icons-png.flaticon.com/128/741/741535.png",
+                "Tech House": "https://cdn-icons-png.flaticon.com/128/9254/9254089.png"
             };
 
             var markerImage = {
-            url: markerImages[event.event_genre],
-            scaledSize: new google.maps.Size(32, 32) 
+                url: markerImages[event.event_genre],
+                scaledSize: new google.maps.Size(32, 32)
             };
-
 
             var marker = new google.maps.Marker({
                 position: {
@@ -169,6 +188,7 @@
         }
     }
 </script>
+
 
 
 <section class="about">
@@ -234,10 +254,6 @@
     </div>
     {% endif %}
 </section>
-
-
-<!--Jquery-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 <!--Google Maps API-->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDLv6foLba6R_4ZlNosCqsZft_U8ruFEE&callback=initMap" async
