@@ -41,9 +41,8 @@ ALLOWED_HOSTS = ['8000-ktc96-groovelocator-w32qxjvnay8.ws-eu106.gitpod.io', 'htt
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-# os.environ["DEBUG"]= 'DEVELOPMENT' 
+os.environ["DEBUG"]= 'DEVELOPMENT' 
 
-DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -64,7 +63,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
-    "bootstrap_datepicker_plus",
     'crispy_forms',
     'map',
     
