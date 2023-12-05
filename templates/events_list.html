@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 <div class="container mt-4">
-  <h2 class="mb-4">Events List</h2>
+  <h1 class="mb-4">Events</h1>
  <div class="filter-form container">
    <form class="form-inline" method="get" action="{% url 'events_list' %}">
      <div class="form-group mb-2">
@@ -36,14 +36,14 @@
           {% if "placeholder" in event.image.url %}
           <a href="{% url 'event_details' event.slug %}">
             <img
-              class="card-img-top event-list-img"
+              class="card-img-top event-card event-card event-list-img"
               src="https://images.pexels.com/photos/1763067/pexels-photo-1763067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="Placeholder Image"
             />
           </a>
 
           {% else %}
-          <div class="card-img-top">
+          <div class="card-img-top event-card">
             <a href="{% url 'event_details' event.slug%}">
               <img
                 class="event-list-img"

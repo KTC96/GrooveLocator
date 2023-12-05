@@ -3,18 +3,24 @@
 
 * {
   margin: 0;
+    font-family: 'Roboto',
+    sans-serif;
 }
 
 body {
   background-color: #0f2027;
 }
 
-.container {
-  min-height: 500px;
-}
 
-h1, h2,h3, h4,h5 {
-  color: white;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  color:white;
+  
 }
 
 .navbar-toggler {
@@ -62,6 +68,14 @@ nav li {
   background-color: #0f2027;
   color: white;
   padding: 20px;
+}
+
+.main-heading {
+  font-size: 50px;
+}
+
+.about-text {
+  font-size: 20px;
 }
 
 .row-center {
@@ -123,6 +137,17 @@ nav li {
   align-items: center;
   justify-content: center;
 }
+
+.user-card {
+  height: 100%;
+}
+
+.user-image {
+  min-height: 200px;
+}
+
+
+
 
 .gm-style-iw-d {
   min-height: 250px !important;
@@ -225,6 +250,16 @@ nav li {
   .login {
     margin-top: 10%;
   }
+
+  .about-text {
+    font-size: 16px;
+  }
+
+   .main-heading {
+     font-size: 40px;
+   }
+
+  
 }
 
 /* Styles for smaller screens */
@@ -236,6 +271,13 @@ nav li {
    .login {
      margin-top: 20%;
    }
+    .about-text {
+      font-size: 14px;
+    }
+    .main-heading {
+      font-size: 32px ;
+    }
+
 
   
 }
@@ -304,8 +346,8 @@ footer {
   border-radius: 4px;
 }
 
-.card-img-top {
-  height: 50vh;
+.event-card {
+  height: 40vh;
   
 }
 
@@ -316,9 +358,11 @@ footer {
 .filter-form {
   color: white;
   display: flex;
-  margin: 20px;
-  
+  margin: 20px 20px 20px 0;
+  padding: 0;
+
 }
+
 
 .filter-form form {
   display: flex;

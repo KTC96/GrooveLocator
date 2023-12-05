@@ -64,7 +64,7 @@ class EventList(ListView):
 
         if not queryset.exists():
             messages.add_message(self.request, messages.INFO, 'No Events Found')
-
+            
         return queryset
 
     def get_context_data(self, **kwargs):

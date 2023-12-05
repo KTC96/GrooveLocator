@@ -1,24 +1,22 @@
 {% extends "base.html" %} 
 {% load static %}
 {% block content %} 
-    <div class="container-fluid relative">
-        <div class="row">
-            <div>
-                <form method="get" action="{% url 'home' %}">
+    <div class="container-fluid relative p-0">
+        <div class="filter-form container m-0 p-2">
+            <form class="form-inline" method="get" action="{% url 'home' %}">
+                <div class="form-group">
                     <label for="event_genre">Select Genre:</label>
-                    <select name="event_genre" id="event_genre">
+                    <select class="form-control" name="event_genre" id="event_genre">
                         <option value="" {% if not selected_genre %}selected{% endif %}>All Genres</option>
                         {% for genre in all_genres %}
                         <option value="{{ genre }}" {% if genre == selected_genre %}selected{% endif %}>{{ genre }}
                         </option>
                         {% endfor %}
                     </select>
-                    <label for="event_date">Select Date:</label>
-                    <input type="date" name="event_date" id="event_date" value="{{ selected_date }}">
-                    <button type="submit">Filter</button>
-                </form>
-                
-            </div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-4 filter-btn">Filter</button>
+            </form>
+        </div>
             <!--Google map-->
             <div class="col-12 col-lg-9" id="map"></div>
             <div class="col-12 col-lg-3">
@@ -226,33 +224,31 @@
                 <h2>What our groovers have to say</h2>
             </div>
            
-            <div class="col-md-4 user-testimonials p-3">
-                <div class="card">
-                    <img src="{% static 'images/user1.jpg' %}" class="card-img-top" alt="...">
+            <div class="col-sm-12 col-md-6 col-lg-4 user-testimonials p-3">
+                <div class="card user-card">
+                    <img src="{% static 'images/user1.jpg' %}" class="card-img-top user-image" alt="Profile image for James">
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
+                        <p class="card-text user-review">Uncovering hidden gems and exploring new artists is a breeze with GrooveLocator. Effortless discovery, endless possibilities.</p>
                     </div>
                 </div>
             </div>
-             <div class="col-md-4 user-testimonials p-3">
-                 <div class="card">
-                     <img src="{% static 'images/user2.jpg' %}" class="card-img-top" alt="...">
+             <div class="col-sm-12 col-md-6 col-lg-4 user-testimonials p-3">
+                 <div class="card user-card">
+                     <img src="{% static 'images/user2.jpg' %}" class="card-img-top user-image"
+                         alt="Profile image for Ben">
                      <div class="card-body">
-                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                             the
-                             card's content.</p>
+                         <p class="card-text user-review">I found events near me effortlessly with Groove Locator. Unforgettable
+                             nights, pulsating beats. It's my go-to for the ultimate music vibe.</p>
                      </div>
                  </div>
              </div>
-            <div class="col-md-4 user-testimonials p-3">
-                <div class="card">
-                    <img src="{% static 'images/user3.jpg' %}" class="card-img-top" alt="...">
+            <div class="col-sm-12 col-md-6 col-lg-4 user-testimonials p-3">
+                <div class="card user-card">
+                    <img src="{% static 'images/user3.jpg' %}" class="card-img-top user-image"
+                        alt="Profile image for Sarah">
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
+                        <p class="card-text user-review">From saving must-attend events to organizing travel details and hotels,
+                            it's your all-in-one platform for seamless event coordination.</p>
                     </div>
                 </div>
             </div>
