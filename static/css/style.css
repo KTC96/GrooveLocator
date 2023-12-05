@@ -9,9 +9,9 @@ body {
   background-color: #0f2027;
 }
 
-/* .container {
+.container {
   min-height: 500px;
-} */
+}
 
 h1, h2,h3, h4,h5 {
   color: white;
@@ -307,11 +307,35 @@ footer {
 .card-img-top {
   height: 50vh;
   
-  
 }
 
 .card {
   border-color: #0f2027;
+}
+
+.filter-form {
+  color: white;
+  display: flex;
+  margin: 20px;
   
 }
 
+.filter-form form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-form label {
+  margin-right: 10px;
+}
+
+.filter-form select,
+.filter-form input,
+.filter-form button {
+  margin-bottom: 10px;
+}
+
+.filter-btn {
+  height: 39px;
+}

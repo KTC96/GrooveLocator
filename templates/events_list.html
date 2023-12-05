@@ -1,21 +1,34 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 <div class="container mt-4">
   <h2 class="mb-4">Events List</h2>
-  <form method="get" action="{% url 'events_list' %}">
-    <label for="event_genre">Select Genre:</label>
-    <select name="event_genre" id="event_genre">
-      <option value="" {% if not selected_genre %}selected{% endif %}>All Genres</option>
-      {% for genre in all_genres %}
-      <option value="{{ genre }}" {% if genre == selected_genre %}selected{% endif %}>{{ genre }}</option>
-      {% endfor %}
-    </select>
-    <label for="event_location">Select City:</label>
-    <input type="text" name="event_location" id="event_location" class="selectize" value="{{ selected_city }}" placeholder="All locations"/>
-    <label for="event_date">Select Date:</label>
-    <input type="date" name="event_date" id="event_date" value="{{ selected_date }}">
-    <button type="submit">Filter</button>
-  </form>
+ <div class="filter-form container">
+   <form class="form-inline" method="get" action="{% url 'events_list' %}">
+     <div class="form-group mb-2">
+       <label for="event_genre" class="mr-2">Select Genre:</label>
+       <select class="form-control" name="event_genre" id="event_genre">
+         <option value="" {% if not selected_genre %}selected{% endif %}>All Genres</option>
+         {% for genre in all_genres %}
+         <option value="{{ genre }}" {% if genre == selected_genre %}selected{% endif %}>{{ genre }}</option>
+         {% endfor %}
+       </select>
+     </div>
+     <div class="form-group mx-sm-3 mb-2">
+       <label for="event_location" class="mr-2">Select City:</label>
+       <input type="text" class="form-control" name="event_location" id="event_location" value="{{ selected_city }}"
+         placeholder="All locations" />
+     </div>
+     <div class="form-group mb-2">
+       <label for="event_date" class="mr-2">Select Date:</label>
+       <input type="date" class="form-control" name="event_date" id="event_date" value="{{ selected_date }}">
+     </div>
+     <button type="submit" class="btn btn-primary mt-4 filter-btn">Filter</button>
+   </form>
+ </div>
+
+
+  
   <div class="row" id="event-list-container">
+    
     {% for event in event_list %}
     <div class="col-xl-4 col-md-6 mb-4">
       <div class="card h-100">
