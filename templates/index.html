@@ -4,20 +4,19 @@
     <div class="container-fluid relative">
         <div class="row">
             <div>
-                <!--filter form for genre and date input-->
-                 <form method="get" action="{% url 'home' %}">
-                     <label for="event_genre">Select Genre:</label>
-                     <select name="event_genre" id="event_genre">
-                         <option value="" {% if not selected_genre %}selected{% endif %}>All Genres</option>
-                         {% for genre in all_genres %}
-                         <option value="{{ genre }}" {% if genre == selected_genre %}selected{% endif %}>{{ genre }}
-                         </option>
-                         {% endfor %}
-                     </select>
-                     <label for="event_date">Select Date:</label>
-                     <input type="date" name="event_date" id="event_date" value="{{ selected_date }}">
-                     <button type="submit">Filter</button>
-                 </form>
+                <form method="get" action="{% url 'home' %}">
+                    <label for="event_genre">Select Genre:</label>
+                    <select name="event_genre" id="event_genre">
+                        <option value="" {% if not selected_genre %}selected{% endif %}>All Genres</option>
+                        {% for genre in all_genres %}
+                        <option value="{{ genre }}" {% if genre == selected_genre %}selected{% endif %}>{{ genre }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                    <label for="event_date">Select Date:</label>
+                    <input type="date" name="event_date" id="event_date" value="{{ selected_date }}">
+                    <button type="submit">Filter</button>
+                </form>
                 
             </div>
             <!--Google map-->
@@ -148,6 +147,7 @@
                        (!selectedDate|| event.event_date === selectedDate);
             });
         }
+     
 
         // Create markers for the updated events
         for (var i = 0; i < events.length; i++) {

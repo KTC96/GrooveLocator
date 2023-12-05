@@ -1,5 +1,6 @@
-{% extends "base.html" %} {% load i18n static %} {% load account socialaccount
-%} {% block head_title %}{% trans "Sign In" %}{% endblock %} {% block content %}
+{% extends "base.html" %}
+{% load i18n static %} {% load account socialaccount %} {% block head_title %}
+{% trans "Sign In" %}{% endblock %} {% block content %}
 <div class="authentication-img container-fluid">
   <div class="container login">
     <div class="row">
@@ -8,7 +9,7 @@
 
         <p>
           {% blocktrans %} If you have not created an account yet, then
-          <a class="link" href="{{ signup_url }}">sign up</a> first.
+          <a class="link login-signup-link" href="{{ signup_url }}">sign up</a> first.
           {% endblocktrans %}
         </p>
       </div>
@@ -17,11 +18,7 @@
       <div class="col-md-8 mt-3 offset-md-2">
         <form method="POST" action="{% url 'account_login' %}">
           {% csrf_token %} {{ form.as_p }} {% if redirect_field_value %}
-          <input
-            type="hidden"
-            name="{{ redirect_field_name }}"
-            value="{{ redirect_field_value }}"
-          />
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}
           <button class="btn btn-primary" type="submit">
             {% trans "Sign In" %}
@@ -31,10 +28,5 @@
     </div>
   </div>
 </div>
-
-<link
-  rel="stylesheet"
-  href="{% static 'css/style.css' %}"
-  crossorigin="anonymous"
-/>
 {% endblock %}
+

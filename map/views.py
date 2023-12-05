@@ -5,6 +5,8 @@ from datetime import date
 from django.http import HttpResponseRedirect, JsonResponse
 from .forms import CommentForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
+
 
 
 
@@ -22,9 +24,6 @@ class home(TemplateView):
         if selected_genre:
             queryset = queryset.filter(event_genre=selected_genre)
 
-        if selected_city:
-            queryset = queryset.filter(event_location=selected_city)
-
         if selected_date:
             queryset = queryset.filter(event_date=selected_date)
 
@@ -36,7 +35,6 @@ class home(TemplateView):
         context['events'] = events
         context['selected_genre'] = self.request.GET.get('event_genre', '')  
         context['all_genres'] = Event.objects.values_list('event_genre', flat=True).distinct()  
-        context['selected_city'] = self.request.GET.get('event_location', '')
         context['all_locations'] = Event.objects.values_list('event_location', flat=True).distinct()   
         context['selected_date'] = self.request.GET.get('event_date', '')
         context['all_dates'] = Event.objects.dates('event_date', 'day', order='DESC')
@@ -47,7 +45,7 @@ class EventList(ListView):
     model = Event
     template_name = 'events_list.html'
     paginate_by = 9
-
+   
     def get_queryset(self):
         queryset = Event.objects.filter(event_date__gte=date.today()).order_by('-event_date')
         selected_genre = self.request.GET.get('event_genre')
@@ -63,6 +61,9 @@ class EventList(ListView):
         
         if selected_date:
             queryset = queryset.filter(event_date=selected_date)
+
+        if not queryset.exists():
+            messages.add_message(self.request, messages.INFO, 'No Events Found')
 
         return queryset
 
@@ -147,35 +148,6 @@ class SavedEventList(LoginRequiredMixin, ListView):
             return self.request.user.saved.all()
         else:
             return Event.objects.none()
-
-        queryset = Event.objects.filter(event_date__gte=date.today()).order_by('-event_date')
-        selected_genre = self.request.GET.get('event_genre')
-        selected_city = self.request.GET.get('event_location')
-        selected_date = self.request.GET.get('event_date')
-
-       
-        if selected_genre:
-            queryset = queryset.filter(event_genre=selected_genre)
-
-        if selected_city:
-            queryset = queryset.filter(event_location=selected_city)
-        
-        if selected_date:
-            queryset = queryset.filter(event_date=selected_date)
-
-        return queryset
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context = super().get_context_data(**kwargs)
-        context['selected_genre'] = self.request.GET.get('event_genre', '')  
-        context['all_genres'] = Event.objects.values_list('event_genre', flat=True).distinct()  
-        context['selected_city'] = self.request.GET.get('event_location', '')
-        context['all_locations'] = Event.objects.values_list('event_location', flat=True).distinct()
-        context['selected_date'] = self.request.GET.get('event_date', '')
-        context['all_dates'] = Event.objects.dates('event_date', 'day', order='DESC')
-
-        return context
     
 class SaveEvent(LoginRequiredMixin, View):
     def post(self, request, slug, *args, **kwargs):
