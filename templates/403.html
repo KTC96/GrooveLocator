@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<section class="error-page-container">
+    <div class="error-page-content">
+        <h2>403 Error: Access Denied</h2>
+        <a href="{% url 'home' %}" class="btn btn-primary">Home</a>
+    </div>
+</section>
+
+{% endblock %}

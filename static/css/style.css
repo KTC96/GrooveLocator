@@ -11,7 +11,6 @@ body {
   background-color: #0f2027;
 }
 
-
 h1,
 h2,
 h3,
@@ -255,9 +254,14 @@ nav li {
     font-size: 16px;
   }
 
-   .main-heading {
+  .main-heading {
      font-size: 40px;
-   }
+  }
+
+  .event-text {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 
   
 }
@@ -268,15 +272,16 @@ nav li {
     width: 90%;
     height: 70%;
   }
-   .login {
+  .login {
      margin-top: 20%;
    }
-    .about-text {
+  .about-text {
       font-size: 14px;
     }
-    .main-heading {
+  .main-heading {
       font-size: 32px ;
     }
+  
 
 
   
@@ -302,6 +307,10 @@ footer {
 .instagram {
   background-color: #ac2bac;
   border-color: #ac2bac;
+}
+
+.email {
+  color: white;
 }
 
 
@@ -347,7 +356,7 @@ footer {
 }
 
 .event-card {
-  height: 40vh;
+  height: 400px;
   
 }
 

@@ -8,11 +8,13 @@
     <img class="event-image" src="{{ event.image.url }}" alt="{{ event.title }}" width="60%" height="100%" />
     {% endif %}
   </div>
-  <div class="col-lg-6 event-text ">
+  <div class="col-lg-6 event-text">
+    <br>
 
     <div class="col">
       <h2>{{ event.title }}</h2>
     </div>
+    
 
 
     <div class="col">
@@ -62,8 +64,8 @@
         <div class="card card-body">
           <form method="POST" style="margin-top: 1.3em">
             {{ comment_form | crispy }} {% csrf_token %}
-            <button type="submit" class="btn btn-signup btn-lg">
-              Submit
+            <button type="submit" class="btn btn-signup btn-lg btn-primary mt-2">
+              Save
             </button>
           </form>
         </div>
