@@ -18,53 +18,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/css/selectize.default.min.css">
     <!--Google fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap">
+    <!--Favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'images/site.webmanifest' %}">
 
    
     <title>Groove Locator</title>
   </head>
-  <header></header>
-
-  <body>
+  <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home' %}"
-          ><img class="logo img-fluid" src="{% static 'images/logo.png' %}" />
+        <a class="navbar-brand" href="{% url 'home' %}"><img class="logo img-fluid"
+            src="{% static 'images/logo.png' %}" />
         </a>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarText"
-          aria-controls="navbarText"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a
-                class="nav-link {% if request.path == '/' %}active{% endif %}"
-                aria-current="page"
-                href="{% url 'home' %}"
-                >Home</a
-              >
+              <a class="nav-link {% if request.path == '/' %}active{% endif %}" aria-current="page"
+                href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link {% if request.path == '/events_list/' %}active{% endif %}"
-                href="{% url 'events_list' %}"
-                >Events</a
-              >
+              <a class="nav-link {% if request.path == '/events_list/' %}active{% endif %}"
+                href="{% url 'events_list' %}">Events</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link {% if request.path == '/saved_events/' %}active{% endif %}"
-                href="{% url 'saved_events' %}"
-                >Saved Events</a
-              >
+              <a class="nav-link {% if request.path == '/saved_events/' %}active{% endif %}"
+                href="{% url 'saved_events' %}">Saved Events</a>
             </li>
           </ul>
           <span class="navbar-text">
@@ -75,9 +61,7 @@
               </li>
               {% else %}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_signup' %}"
-                  >Sign Up</a
-                >
+                <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'account_login' %}">Login</a>
@@ -88,6 +72,8 @@
         </div>
       </div>
     </nav>
+  </header>
+  <body>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-8 offset-md-2">
