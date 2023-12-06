@@ -448,16 +448,16 @@ footer {
 
 /* Error page---------------------------------------- */
 
-.error-page-content{
+.error-page-content {
   width: 50%;
-  max-width: 500px;
-  min-width: 400px;
+  max-width: 80%;
+  min-width: 300px;
   padding: 50px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(102, 0, 204, 0.2);
   text-align: center;
-  margin-top: 6%;
+  margin: 0 10px 0 10px;
 }
 
 .error-page-content h2 {
@@ -468,6 +468,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 60vh;
 }
  
