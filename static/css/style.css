@@ -9,6 +9,9 @@
 
 body {
   background-color: #0f2027;
+  display: flex;
+  flex-direction: column;
+  min-height:100vh;
 }
 
 h1,
@@ -369,7 +372,7 @@ nav li {
 
 footer {
   background-color: #0f2027;
-  max-height: 10%;
+  margin-top: auto;
   
 }
 .facebook {
@@ -408,10 +411,6 @@ footer {
   text-decoration: none;
 }
 .col h2 {
-  color: white;
-}
-
-.text-color {
   color: white;
 }
 

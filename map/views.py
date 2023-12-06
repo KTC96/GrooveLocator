@@ -47,7 +47,7 @@ class EventList(ListView):
     paginate_by = 9
    
     def get_queryset(self):
-        queryset = Event.objects.filter(event_date__gte=date.today()).order_by('-event_date')
+        queryset = Event.objects.filter(event_date__gte=date.today()).order_by('event_date')
         selected_genre = self.request.GET.get('event_genre')
         selected_city = self.request.GET.get('event_location')
         selected_date = self.request.GET.get('event_date')
@@ -144,10 +144,22 @@ class SavedEventList(LoginRequiredMixin, ListView):
     paginate_by = 9
 
     def get_queryset(self):
+        
         if self.request.user.is_authenticated:
             return self.request.user.saved.all()
+            
+      
         else:
             return Event.objects.none()
+
+    def get(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+
+        if not queryset.exists():
+            messages.info(request, 'You have not saved any events yet')
+
+        return super().get(request, *args, **kwargs)
+        
     
 class SaveEvent(LoginRequiredMixin, View):
     def post(self, request, slug, *args, **kwargs):
