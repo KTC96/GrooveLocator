@@ -73,8 +73,12 @@ nav li {
   font-size: 50px;
 }
 
+.secondary-heading {
+  font-size: 40px;
+}
+
 .about-text {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .row-center {
@@ -143,6 +147,10 @@ nav li {
 
 .user-image {
   min-height: 200px;
+}
+
+.user-name {
+  color:#6600cc;
 }
 
 .gm-style-iw-d {
@@ -269,6 +277,10 @@ nav li {
      font-size: 40px;
   }
 
+  .secondary-heading {
+    font-size: 30px;
+  }
+
   .event-text {
     padding-left: 50px;
     padding-right: 50px;
@@ -287,6 +299,8 @@ nav li {
   }
 
   
+
+ 
 }
 
 /* Styles for smaller screens */
@@ -295,21 +309,29 @@ nav li {
     width: 90%;
     height: 70%;
   }
+
   .login {
-     margin-top: 20%;
-   }
+    margin-top: 20%;
+  }
+
   .about-text {
-      font-size: 14px;
-    }
+    font-size: 14px;
+  }
+
   .main-heading {
-      font-size: 32px ;
-    }
+    font-size: 32px ;
+  }
+
+  .secondary-heading {
+    font-size: 25px;
+  }
+
   .infowindow-style h2 {
-     font-size: 15px;
-     padding: 0 5px 0 5px;
+    font-size: 15px;
+    padding: 0 5px 0 5px;
   }
   .infowindow-style p {
-      font-size: 12px;
+    font-size: 12px;
   }
   .infowindow-style {
     margin: 5px 0 5px 0;
@@ -318,10 +340,6 @@ nav li {
     font-size: 12px;
   }
 
-  
-
-
-  
 }
 
 /* Footer---------------------------------------- */
@@ -362,7 +380,6 @@ footer {
   justify-content: center;
 
 }
-
 .col h2 {
   color: white;
 }
@@ -387,14 +404,13 @@ footer {
 /* Event_list---------------------------------------- */
 
 .event-list-img {
-  height: 100%;
-  width: 100%;
-  border-radius: 4px;
-}
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+  }
 
 .event-card {
-  height: 400px;
-  
+    height: 375px;
 }
 
 .card {
@@ -432,5 +448,16 @@ footer {
 
 /* Error page---------------------------------------- */
 
-
+.error-page-container{
+  width: 50%;
+  max-width: 500px;
+  min-width: 400px;
+  padding: 50px;
+  background-color: rgba(15, 32, 39, 0.6);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+  margin-top: 6%;
+}
  
