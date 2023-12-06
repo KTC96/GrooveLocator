@@ -55,9 +55,11 @@
           {% endif %}
         </div>
         <div class="card-body">
+          <a href="{% url 'event_details' event.slug%}">
           <h5 class="card-title">{{ event.title }}</h5>
           <p class="card-text">Date: {{ event.event_date }}</p>
           <p class="card-text">{{ event.event_location }}</p>
+          </a>
         </div>
       </div>
     </div>
