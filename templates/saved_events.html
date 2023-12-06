@@ -7,20 +7,20 @@
     <h1>Your Saved Events</h1>
     <div class="row">
         {% for event in object_list %}
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card event h-100">
                 <div class="image-container">
                     {% if "placeholder" in event.image.url %}
                     <a href="{% url 'event_details' event.slug %}">
                         <img class="card-img-top event-list-img"
                             src="https://images.pexels.com/photos/1763067/pexels-photo-1763067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            alt="Placeholder Image" />
+                            alt="Placeholder Image">
                     </a>
 
                     {% else %}
                     <div class="card-img-top">
                         <a href="{% url 'event_details' event.slug%}">
-                            <img class="event-list-img" src="{{ event.image.url }}" alt="{{ event.title }} Image" />
+                            <img class=" card-img-top event-list-img" src="{{ event.image.url }}" alt="{{ event.title }} Image" />
                         </a>
                     </div>
                     {% endif %}
@@ -28,9 +28,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ event.title }}</h5>
                     <p class="card-text">Date: {{ event.event_date }}</p>
-                    <p class="card-text">{{ event.event_location }}</p>
-                    <p class="d-inline-flex gap-1">
-                        
+                    <p class="card-text">{{ event.event_location }}</p>  
                 </div>
             </div>
         </div>

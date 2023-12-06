@@ -30,20 +30,20 @@
   <div class="row" id="event-list-container">
     
     {% for event in event_list %}
-    <div class="col-xl-4 col-md-6 mb-4">
-      <div class="card h-100">
+    <div class="col-xl-4 col-md-6 mb-4 ">
+      <div class="card event h-100">
         <div class="image-container">
           {% if "placeholder" in event.image.url %}
           <a href="{% url 'event_details' event.slug %}">
             <img
-              class="card-img-top event-card event-card event-list-img"
+              class="card-img-top event-list-img"
               src="https://images.pexels.com/photos/1763067/pexels-photo-1763067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="Placeholder Image"
             >
           </a>
 
           {% else %}
-          <div class="card-img-top event-card">
+          <div class="card-img-top">
             <a href="{% url 'event_details' event.slug%}">
               <img
                 class="event-list-img"

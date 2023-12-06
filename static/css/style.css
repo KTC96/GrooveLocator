@@ -298,9 +298,18 @@ nav li {
     font-size: 14px;
   }
 
-  
+   body .event-list-img {
+     height: 300px;
+   }
 
- 
+
+}
+
+@media (max-width: 768px) {
+  body .event-list-img {
+    height: 400px;
+  }
+
 }
 
 /* Styles for smaller screens */
@@ -339,8 +348,9 @@ nav li {
   .infowindow-btn {
     font-size: 12px;
   }
-
 }
+
+
 
 /* Footer---------------------------------------- */
 
@@ -404,13 +414,13 @@ footer {
 /* Event_list---------------------------------------- */
 
 .event-list-img {
-    height: 100%;
-    width: 100%;
-    border-radius: 4px;
-  }
+  height: 350px;
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+}
 
-.event-card {
-    height: 375px;
+.event:hover {
+  box-shadow: 0 0 10px 5px #6600cc;
 }
 
 .card {
