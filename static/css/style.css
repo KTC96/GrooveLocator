@@ -145,21 +145,30 @@ nav li {
   min-height: 200px;
 }
 
-
-
-
 .gm-style-iw-d {
-  min-height: 250px !important;
+  min-height:auto !important;
   background-color: #6600cc !important;
-  overflow: hidden !important;
+  overflow:auto!important;
 }
 
 .gm-style-iw, .gm-style-iw-c{
   background-color: #6600cc !important;
+  text-align: center;
+}
+
+.infowindow-style h2 {
+  padding: 0 10px 0 10px;
+  font-size: 25px;
+}
+
+.infowindow-style p {
+  font-size: 18px;
 }
 
 .infowindow-style {
   color: white;
+  margin: 10px 0 10px 0;
+ 
 }
 
 .infowindow-btn {
@@ -169,6 +178,8 @@ nav li {
   border-radius: 5px;
   font-size: 16px;
   background-color: #0f2027;
+  margin-bottom: 10px;
+  height: 100%;
 }
 
 .infowindow-btn:hover {
@@ -263,6 +274,18 @@ nav li {
     padding-right: 50px;
   }
 
+  .infowindow-style h2 {
+    font-size: 20px;
+  }
+
+  .infowindow-style p {
+    font-size: 15px;
+  }
+
+  .infowindow-btn {
+    font-size: 14px;
+  }
+
   
 }
 
@@ -281,6 +304,20 @@ nav li {
   .main-heading {
       font-size: 32px ;
     }
+  .infowindow-style h2 {
+     font-size: 15px;
+     padding: 0 5px 0 5px;
+  }
+  .infowindow-style p {
+      font-size: 12px;
+  }
+  .infowindow-style {
+    margin: 5px 0 5px 0;
+  }
+  .infowindow-btn {
+    font-size: 12px;
+  }
+
   
 
 
@@ -369,7 +406,6 @@ footer {
   display: flex;
   margin: 20px 20px 20px 0;
   padding: 0;
-
 }
 
 
@@ -397,3 +433,4 @@ footer {
 /* Error page---------------------------------------- */
 
 
+ 
