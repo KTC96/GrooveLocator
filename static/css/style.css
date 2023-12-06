@@ -448,7 +448,7 @@ footer {
 
 /* Error page---------------------------------------- */
 
-.error-page-container{
+.error-page-content{
   width: 50%;
   max-width: 500px;
   min-width: 400px;
@@ -456,10 +456,14 @@ footer {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(102, 0, 204, 0.2);
+  text-align: center;
+  color: black;
+  margin-top: 6%;
+}
+
+.error-page-container {
   display: flex;
   justify-content: center;
-  text-align: center;
-  color: white;
-  margin-top: 6%;
+  align-items: center;
 }
  
