@@ -15,7 +15,7 @@
      <div class="form-group mx-sm-3 mb-2">
        <label for="event_location" class="mr-2">Select City:</label>
        <input type="text" class="form-control" name="event_location" id="event_location" value="{{ selected_city }}"
-         placeholder="All locations" />
+         placeholder="All locations">
      </div>
      <div class="form-group mb-2">
        <label for="event_date" class="mr-2">Select Date:</label>
@@ -39,7 +39,7 @@
               class="card-img-top event-card event-card event-list-img"
               src="https://images.pexels.com/photos/1763067/pexels-photo-1763067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="Placeholder Image"
-            />
+            >
           </a>
 
           {% else %}
@@ -49,7 +49,7 @@
                 class="event-list-img"
                 src="{{ event.image.url }}"
                 alt="{{ event.title }} Image"
-              />
+              >
             </a>
           </div>
           {% endif %}

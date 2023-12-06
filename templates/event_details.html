@@ -3,9 +3,9 @@
 <div class="row event-info g-0">
   <div class="col-lg-6 event-image">
     {% if "placeholder" in event.image.url %}
-    <img class="card-img-top" src="{% static 'images/pexels-sebastian-ervi-1763067.jpg' %}" alt="Placeholder Image" />
+    <img class="card-img-top" src="{% static 'images/pexels-sebastian-ervi-1763067.jpg' %}" alt="Placeholder Image">
     {% else %}
-    <img class="event-image" src="{{ event.image.url }}" alt="{{ event.title }}" width="60%" height="100%" />
+    <img class="event-details-image" src="{{ event.image.url }}" alt="{{ event.title }}" width="60%" height="100%">
     {% endif %}
   </div>
   <div class="col-lg-6 event-text">
@@ -14,11 +14,9 @@
     <div class="col">
       <h2>{{ event.title }}</h2>
     </div>
-    
-
-
+  
     <div class="col">
-      <p>{{ event.event_details|safe }}</p>
+      {{ event.event_details|safe }}
     </div>
     <div class="col">
       {% if user.is_authenticated %}
