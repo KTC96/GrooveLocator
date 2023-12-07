@@ -11,7 +11,7 @@ class Event(models.Model):
     event_location = models.CharField(max_length=250)
     event_venue = models.CharField(max_length=200, null=True)
     event_date = models.DateField(default=timezone.now)
-    event_time = models.TimeField(default=timezone.now)
+    event_time = models.TimeField(null=True)
     event_details = models.TextField()
     saved = models.ManyToManyField(User, related_name="saved", blank=True)
     image = CloudinaryField('image', default='placeholder')

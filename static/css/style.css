@@ -158,10 +158,12 @@ nav li {
 
 .user-card {
   height: 100%;
+  
 }
 
 .user-image {
-  min-height: 200px;
+  height: 250px;
+  
 }
 
 .user-name {
@@ -171,7 +173,7 @@ nav li {
 .gm-style-iw-d {
   min-height:auto !important;
   background-color: #6600cc !important;
-  overflow:auto!important;
+  overflow:hidden !important;
 }
 
 .gm-style-iw, .gm-style-iw-c{
@@ -222,11 +224,14 @@ nav li {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   color: white;
-  margin-top: 10px;
+  margin-top: 5%;
+}
+
+.logout {
+  margin-top: 10%;
 }
 
 .sign-up {
- 
   max-width: 50%;
   padding: 20px;
   height: auto;
@@ -290,7 +295,7 @@ nav li {
 
   .event-text {
     padding-left: 50px;
-    padding-right: 50px;
+  
   }
 
   .infowindow-style h2 {
@@ -321,6 +326,10 @@ nav li {
     max-width: 70%;
   }
 
+  .user-image {
+    height: 100%;
+  }
+
 
 
 }
@@ -333,6 +342,7 @@ nav li {
 
   .login {
     min-width: 90%;
+    
   }
 
   .about-text {
@@ -412,6 +422,7 @@ footer {
 
 .event-text {
   padding-right: 50px;
+  color: white;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -427,8 +438,10 @@ footer {
 
 .event-list-img {
   height: 350px;
+  /* object-fit: cover; */
   width: 100%;
   border-radius: 4px 4px 0 0;
+  
 }
 
 .event:hover {
