@@ -270,6 +270,7 @@ nav li {
 #id_password2,
 #id_email {
   width: 100%;
+  border-radius: 5px;
 }
 
 .sign-up .row .col-md-8 .signup ul {
