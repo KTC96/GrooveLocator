@@ -12,7 +12,6 @@ The Green Dragon Pub Quiz is an interactive, JavaScript-based quiz game that tes
 2. [Design](#design)
    * [Colour Scheme](#colour-scheme)
    * [Typography](#typography)
-   * [Imagery](#imagery)
    * [Wireframes](#wireframes)
 3. [Features](#features)
    * [Future Implementations](#future-implementations)
@@ -147,7 +146,6 @@ The pairing of white text with the rich black background allows a high level of 
 <img src="./static/images/colour_scheme.png" height= 400px width= 650px>
 
 
-
 ### Typography
 
 I used Google Fonts to browse fonts that fit my theme. 
@@ -159,9 +157,54 @@ I used Google Fonts to browse fonts that fit my theme.
 * [Flaticon](https://www.flaticon.com/) icons were used for the legend and markers for the google map
 
 
-### Imagery
 
 ### Wireframes
+
+I used [Balsamiq](https://balsamiq.com/wireframes/) to create the wireframes for this project
+
+#### Home Page
+
+<details><summary>Click to view Home Page wireframes</summary>
+<img src="#">
+</details>
+
+#### Sign Up Page
+
+<details><summary>Click to view Sign Up Page wireframes</summary>
+<img src="#">
+</details>
+
+#### Login Page
+
+<details><summary>Click to view Login Page wireframes</summary>
+<img src="#">
+</details>
+
+#### Logout Page
+
+<details><summary>Click to view Logout Page wireframes</summary>
+<img src="#">
+</details>
+
+#### Events and Saved Events Page
+
+<details><summary>Click to view Events and Saved Events wireframes</summary>
+<img src="#">
+</details>
+
+
+#### Event Details Page
+
+<details><summary>Click to view Event Details wireframes</summary>
+<img src="#">
+</details>
+
+## Existing Features
+
+### Home Page
+   * This is the page the user lands on when visiting the website. As a new user you can see events nearby on the map and can learn what GrooveLocator is all about with reviews from users and a call to action button to sign up. 
+
+
 
     
 
