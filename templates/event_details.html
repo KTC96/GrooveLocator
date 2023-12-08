@@ -1,35 +1,47 @@
-{% extends "base.html" %} {% block content %} {% load static %}
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
 {% load crispy_forms_tags %}
+
 <div class="row event-info g-0">
   <div class="col-lg-6 event-image">
+    <!-- Display placeholder image if event image is not available -->
     {% if "placeholder" in event.image.url %}
-     <img class="event-details-image"
-       src="https://images.pexels.com/photos/1763067/pexels-photo-1763067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-       alt="Placeholder Image" width="60%" height="100%">
+    <img class="event-details-image"
+      src="https://images.pexels.com/photos/1763067/pexels-photo-1763067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      alt="Placeholder Image" width="60%" height="100%">
     {% else %}
+    <!-- Display event image if available -->
     <img class="event-details-image" src="{{ event.image.url }}" alt="{{ event.title }}" width="60%" height="100%">
     {% endif %}
   </div>
   <div class="col-lg-6 event-text">
     <br>
 
+    <!-- Display event title -->
     <div class="col">
       <h2>{{ event.title }}</h2>
     </div>
-  
+
+    <!-- Display event details-->
     <div class="col">
       {{ event.event_details|safe }}
     </div>
     <br>
+
+    <!-- Save event button and message -->
     <div class="col">
       {% if user.is_authenticated %}
-      <form class="d-inline" action="{% url 'save_event' event.slug %}" method="POST">
-        {% csrf_token %} {% if saved %}
+      <form class="d-inline" action="{% url 'save_event' event.slug %}" method="post">
+        {% csrf_token %}
+        {% if saved %}
+        <!-- Display filled heart icon if the event is saved -->
         <button type="submit" name="save_id" value="{{event.slug}}" class="btn-like">
           <i class="fa-solid fa-heart"></i>
         </button>
         <p class="text-white d-inline">Click to un-save this event</p>
         {% else %}
+        <!-- Display empty heart icon if the event is not saved -->
         <button type="submit" name="save_id" value="{{event.slug}}" class="btn-like">
           <i class="fa-regular fa-heart"></i>
         </button>
@@ -40,39 +52,47 @@
     </div>
   </div>
 </div>
-  <br>
-<div class="row event-info g-0 p-0 ">
+<br>
+
+<!-- Additional event information -->
+<div class="row event-info g-0 p-0">
   <div class="col-lg-6 event-text">
     <span>
+      <!-- Display number of users interested, event date, time, and ticket price -->
       <h3>Groovers Interested: {{ event.number_saved_event }}</h3>
       <p> Date: {{event.event_date }}</p>
       <p> Time: {{ event.event_time}}</p>
       <p> Ticket Price £{{ event.event_price }}</p>
     </span>
-     <div class="col-lg-12 add-details">
-       <div>
-         {% if user.is_authenticated %} {% if saved %}
-         <br>
-         <p class="d-inline-flex gap-1">
-           <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-             data-bs-target="#collapseExample{{ event.id }}" aria-expanded="false"
-             aria-controls="collapseExample{{ event.id }}">
-             Add your event details
-           </button>
-         </p>
-         <div class="collapse collapse-horizontal" id="collapseExample{{ event.id }}">
-           <div class="card card-body">
-             <form method="POST">
-               {{ comment_form | crispy }} {% csrf_token %}
-               <button type="submit" class="btn btn-signup btn-lg btn-primary mt-2">
-                 Save
-               </button>
-             </form>
-           </div>
-         </div>
-         {% endif %} {% endif %}
-       </div>
-     </div>
+
+    <!-- Add event details section (for authenticated users who have saved the event) -->
+    <div class="col-lg-12 add-details">
+      <div>
+        {% if user.is_authenticated %}
+        {% if saved %}
+        <br>
+        <!-- Button to toggle the event details form -->
+        <p class="d-inline-flex gap-1">
+          <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseExample{{ event.id }}" aria-expanded="false"
+            aria-controls="collapseExample{{ event.id }}">
+            Add your event details
+          </button>
+        </p>
+        <div class="collapse collapse-horizontal" id="collapseExample{{ event.id }}">
+          <div class="card card-body">
+            <form method="post">
+              {{ comment_form | crispy }} {% csrf_token %}
+              <button type="submit" class="btn btn-signup btn-lg btn-primary mt-2">
+                Save
+              </button>
+            </form>
+          </div>
+        </div>
+        {% endif %}
+        {% endif %}
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
