@@ -1,7 +1,7 @@
 # GrooveLocator
 The Green Dragon Pub Quiz is an interactive, JavaScript-based quiz game that tests users' knowledge of The Lord of The Rings universe. The site provides visual and audio feedback depending on whether the correct or incorrect answer is selected. User high scores are also recorded alongside their username, creating a fun and competitive environment.
 <br>
-![GrooveLocator](#)
+![GrooveLocator](./static/images/responsive.png)
 
 ## [Link to live site](https://groove-locator-1cf946ce6f56.herokuapp.com/)
 
