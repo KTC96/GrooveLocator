@@ -1,47 +1,60 @@
 {% load static %}
+
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="music, rave, events finder app, DJ">
-    <meta name="description" content="GrooveLocator, an app designed to find electronic music events near you.">
-    <!--Bootstrap-->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!--Fontawesome-->
-    <script
-      src="https://kit.fontawesome.com/64b9a22ea9.js"
-      crossorigin="anonymous"
-    ></script>
-    <!--CSS stylesheet-->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <!--Selectize css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/css/selectize.default.min.css">
-    <!--Google fonts-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap">
-    <!--Favicon-->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
-    <link rel="manifest" href="{% static 'images/site.webmanifest' %}">
 
-   
-    <title>Groove Locator</title>
-  </head>
+<head>
+  <!-- Meta tags for document settings -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="music, rave, events finder app, DJ">
+  <meta name="description" content="GrooveLocator, an app designed to find electronic music events near you.">
+
+  <!-- Bootstrap styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <!-- Fontawesome icons -->
+  <script src="https://kit.fontawesome.com/64b9a22ea9.js" crossorigin="anonymous"></script>
+
+  <!-- Custom CSS stylesheet -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+  <!-- Selectize CSS -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/css/selectize.default.min.css">
+
+  <!-- Google fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'images/site.webmanifest' %}">
+
+  <!-- Document title -->
+  <title>Groove Locator</title>
+</head>
+
+<body>
+  <!-- Header section with navigation -->
   <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
+        <!-- Brand/logo on the left side -->
         <a class="navbar-brand" href="{% url 'home' %}">
           <img class="logo img-fluid" src="{% static 'images/logo.png' %}" alt="Logo">
         </a>
 
+        <!-- Toggle button for small screens -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
           aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Navigation links and dropdown menu -->
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
@@ -58,10 +71,12 @@
             </li>
           </ul>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <!-- Display Logout link if user is authenticated -->
             {% if user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
             </li>
+            <!-- Display Login and Sign Up links if user is not authenticated -->
             {% else %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'account_login' %}">Login</a>
@@ -75,82 +90,82 @@
       </div>
     </nav>
   </header>
-<body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-8 offset-md-2">
-          {% for message in messages %}
-          <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg"
-          role="alert">
+  <!-- Main content area -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <!-- Display messages to the user -->
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
           {{ message | safe }}
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Content block -->
+  {% block content%} {% endblock content%}
+
+  <!-- Footer section -->
+  <footer class="bg-dark py-4">
+    <div class="container">
+      <div class="row">
+        <!-- Contact information-->
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
           
-          </div>
-          {% endfor %}
+          <p>Email: <a href="mailto:info@groovelocator.co.uk" class="email">info@groovelocator.com</a></p>
+        </div>
+        <div class="col-md-4">
+          <h5>Connect with Us</h5>
+          <!-- Social media links with Font Awesome icons -->
+          <a class="btn btn-primary btn-floating m-1 facebook" href="https://www.facebook.com/" target="_blank"
+            rel="noopener noreferrer" aria-label="Facebook (opens in a new tab)">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a class="btn btn-primary btn-floating m-1 twitter" href="https://twitter.com/?lang=en-gb" target="_blank"
+            rel="noopener noreferrer" aria-label="Twitter (opens in a new tab)">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a class="btn btn-primary btn-floating m-1 instagram" href="https://www.instagram.com/" target="_blank"
+            rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <!-- About Groove Locator -->
+        <div class="col-md-4">
+          <h5>About Groove Locator</h5>
+          <p>Your ultimate destination for discovering dance and electronic music events. Join the community and never
+            miss a beat!</p>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="row">
+        <!-- Copyright information-->
+        <div class="col-md-6">
+          <p>&copy; 2023 Groove Locator. All rights reserved.</p>
         </div>
       </div>
     </div>
-    {% block content%} {% endblock content%}
-    <footer class="bg-dark py-4">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <h5>Contact Us</h5>
-              <p>Email: 
-                 <a href="mailto:info@groovelocator.co.uk" class="email"
-                   >info@groovelocator.com</a>
-              </p>
-            </div>
-            <div class="col-md-4">
-              <h5>Connect with Us</h5>
-              
-                <a class="btn btn-primary btn-floating m-1 facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opens in a new tab)">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a class="btn btn-primary btn-floating m-1 twitter" href="https://twitter.com/?lang=en-gb"
-                  target="_blank" rel="noopener noreferrer" aria-label="Twitter (opens in a new tab)">
-                 
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a
-                  class="btn btn-primary btn-floating m-1 instagram" href="https://www.instagram.com/" target="_blank"
-                  rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)">
-                  <i class="fab fa-instagram"></i>
-                </a>
-            
-            </div>
-            <div class="col-md-4">
-              <h5>About Groove Locator</h5>
-              <p>Your ultimate destination for discovering dance and electronic music events. Join the community and
-                never miss a beat!</p>
-            </div>
-          </div>
-          <hr class="my-4">
-          <div class="row">
-            <div class="col-md-6">
-              <p>&copy; 2023 Groove Locator. All rights reserved.</p>
-            </div>
-         
-          </div>
-        </div>
-      </footer>
-     
-    <!--JS bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
-    </script>
-    <!--Jquery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <!--Selectize JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/js/standalone/selectize.min.js"></script>
-    <!--Dismiss messages auto-->
-    <script>
-      setTimeout(function() {
-        let messages = document.getElementById("msg");
-        let alert = new bootstrap.Alert(messages);
-        alert.close();
-      }, 3000);
-    </script>
-   
+  </footer>
+  <!--JS bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+  </script>
+  <!--Jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <!--Selectize JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/js/standalone/selectize.min.js"></script>
+  <!-- Auto-dismiss messages after 3 seconds -->
+  <script>
+    setTimeout(function () {
+      let messages = document.getElementById("msg");
+      let alert = new bootstrap.Alert(messages);
+      alert.close();
+    }, 3000);
+  </script>
 </body>
+
 </html>
