@@ -1,7 +1,7 @@
 # GrooveLocator
 The Green Dragon Pub Quiz is an interactive, JavaScript-based quiz game that tests users' knowledge of The Lord of The Rings universe. The site provides visual and audio feedback depending on whether the correct or incorrect answer is selected. User high scores are also recorded alongside their username, creating a fun and competitive environment.
 <br>
-![GrooveLocator](./static/images/responsive.png)
+![GrooveLocator](documentation/responsive.png)
 
 ## [Link to live site](https://groove-locator-1cf946ce6f56.herokuapp.com/)
 
@@ -33,7 +33,8 @@ I employed the Agile methodology and utilized a GitHub project board to organize
 
 <details><summary>Issues Template</summary>
 
-<img src="./static/images/issues_template.png" height="500px">
+
+![issue template](documentation/issues_template.png)
 
 </details>
 
@@ -143,7 +144,7 @@ The pairing of white text with the rich black background allows a high level of 
 * `#FFFFFF` used as the font colour.
 
 
-<img src="./static/images/colour_scheme.png" height= 400px width= 650px>
+![colour scheme](documentation/colour_scheme.png)
 
 
 ### Typography
@@ -249,46 +250,68 @@ I used [Figma](https://www.figma.com/) to create the wireframes for this project
 ### Home Page
    * This is the page the user lands on when visiting the website. As a new user you can see events nearby on the map and can learn what GrooveLocator is all about with reviews from users and a call to action button to sign up. 
 
-   <img src="./static/images/home_newuser.png">
+   ![home](documentation/home_newuser.png)
 
    * After a user has signed up and logged in, the appearance of the home page changes, and the map height increases. The user is greeted by the user name and they are now free to explore the site and save events. 
 
-   <img src="./static/images/home_returning_user.png">
+   ![home](documentation/home_returning_user.png)
+
+   ![home](documentation/home_events.png)
+
+   ![home](documentation/home_filtered.png)
+
+   ![home](documentation/home_infowindow.png)
 
 ### Sign Up Page
    * This is where the user can create an account, optionally inputting their email address. If a user is already signed up and visits this page they can navigate to the login page via a link.
 
-   <img src="./static/images/signup_page.png">
+   ![sign up](documentation/signup_page.png)
 
 ### Login Page
    * This is where users who have already created an account can login. They can toggle to have their details remembered to avoid having to login again. 
 
-   <img src="./static/images/login_page.png">
+   ![login](documentation/login_page.png)
 
 ### Navigation Menu
 
    * This is how the user navigated to different pages of the site. The logo always appears but the menu is responsive and displays as a hamburger icon at smaller screen sizes.
 
-   <img src="./static/images/navbar_desktop.png">
-   
-   <img src="./static/images/navbar_mobile_closed.png">
-  
-   <img src="./static/images/navbar_mobile_open.png">
+   ![navigation](documentation/navbar_desktop.png)
+   ![navigation](documentation/navbar_mobile_closed.png)
+   ![navigation](documentation/navbar_mobile_open.png)
+
 
 ### Footer
 
    * The footer appears on all pages and includes a contact email, icon links to social media websites and a small about section.
 
-   <img src="./static/images/footer.png">
+   ![footer](documentation/footer.png)
 
 ### Events
    * The events page displays cards for each event in date descending order and provides the option to filter events based on genre, city and date.
 
-   <img src="#">
+   ADD SCREENSHOT AFTER MORE EVENTS ADDED
 
+#### Filtered Event
+
+![Event list](documentation/event_list_filtering.png)
+
+   
 ### Event Details
 
+#### New User
+![screenshot](documentation/event_details_newuser.png)
+
+#### Returning User
+![screenshot](documentation/event_details_returning_user.png)
+
 ### Saved Events
+![screenshot](documentation/saved_events.png)
+
+#### No Saved Events
+![screenshot](documentation/saved_events_none.png)
+
+
 
   
 
