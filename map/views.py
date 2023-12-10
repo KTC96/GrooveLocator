@@ -144,9 +144,11 @@ class SavedEventList(LoginRequiredMixin, ListView):
     paginate_by = 9
 
     def get_queryset(self):
+   
         
         if self.request.user.is_authenticated:
             return self.request.user.saved.all()
+            
             
       
         else:
