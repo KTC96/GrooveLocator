@@ -300,18 +300,68 @@ I used [Figma](https://www.figma.com/) to create the wireframes for this project
 ### Event Details
 
 #### New User
-![screenshot](documentation/event_details_newuser.png)
+![Event Details](documentation/event_details_newuser.png)
 
 #### Returning User
-![screenshot](documentation/event_details_returning_user.png)
+![Event Details](documentation/event_details_returning_user.png)
 
 ### Saved Events
-![screenshot](documentation/saved_events.png)
+![Saved Events](documentation/saved_events.png)
 
 #### No Saved Events
-![screenshot](documentation/saved_events_none.png)
+![Saved Events](documentation/saved_events_none.png)
 
+### Error Pages
+![Error](documentation/403.png)
+![Error](documentation/404.png)
+![Error](documentation/500.png)
 
+## Future Development
+
+I wanted to include more features in my project which some of which I had planned to implement but I have logged as Wont't have on my GitHub project board aligned with MoSCow prioritization. 
+
+* Social Login
+
+   * Streamline the user sign-up process by incorporating social login options, such as Google and Facebook. This not only saves users time but also increases the likelihood of them completing the registration.
+
+* Additional Map Filtering
+
+   * Enhance user experience on the Google Map by implementing advanced filtering options. Users should be able to selectively view events within a specific time frame, preventing map clutter and ensuring a more focused display.
+
+* Calendar View
+
+   * Integrate a calendar view feature to provide users with a visually intuitive way of tracking and managing their saved events. This allows for easy identification of upcoming events.
+
+* Email Reminders
+
+   * Implement a proactive email reminder system to keep users informed about their saved events. Regular reminders contribute to increased user engagement and participation.
+
+* Infowindows
+
+   * Optimize the user interface by restricting the opening of only one infowindow at a time. Achieve this by securely passing the Google Map API through the view, enhancing API key security. Additionally, enable users to save events directly from the Infowindow, streamlining their interaction.
+
+* Dynamic Prices
+
+   * Introduce dynamic pricing functionality based on the availability of tickets. This feature adapts prices according to ticket availability, enhancing user experience and potentially increasing event participation.
+
+* Ticketmaster API
+
+   * While initially considered for its ability to display numerous events on the map, the Ticketmaster API proved challenging to integrate with CRUD functionality. Evaluate alternative solutions or enhancements for a more seamless user experience.
+
+* Auto Complete
+
+   * Improve user search experience by incorporating Google autocomplete functionality when filtering events by city. This enhancement adds convenience and efficiency to the search process.
+
+* Ticketing
+
+   * Explore options to provide users with direct links to purchase tickets or consider integrating ecommerce functionality. Establish partnerships for selling tickets directly on the platform, offering a more comprehensive event experience.
+
+* Styling
+
+   * Refine the platform's visual appeal and responsiveness. Prioritize improvements to styling, ensuring a polished and user-friendly interface. Additionally, organize saved events to display in chronological order, enhancing user navigation and experience.
+
+## Technologies
+![My Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards?lineCount=3&line1=postgresql%2Cpostgresql%2C6cc7a1%3Bbootstrap%2Cbootstrap%2C7b86c0%3BCloudinary%2Ccloudinary%2C445677%3B&line2=django%2Cdjango%2C344312%3Bjavascript%2Cjavascript%2Cecf398%3Bpython%2Cpython%2C9b9ebf%3B&line3=html5%2Chtml5%2C73a4ea%3Bcss3%2Ccss3%2C8983cc%3B)
 
   
 
