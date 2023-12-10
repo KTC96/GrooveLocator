@@ -212,11 +212,11 @@ I used [Figma](https://www.figma.com/) to create the wireframes for this project
 <details><summary>Click to view Logout Page wireframes</summary>
 
 #### Desktop
-![screenshot](documentation/wireframes/logout_wireframe_desktop.png)
+![screenshot](documentation/wireframes/signout_wireframe_desktop.png)
 #### Tablet
-![wireframe](documentation/wireframes/logout_wireframe_tablet.png)
+![wireframe](documentation/wireframes/signout_wireframe_tablet.png)
 #### Mobile
-![wireframe](documentation/wireframes/logout_wireframe_mobile.png)
+![wireframe](documentation/wireframes/signout_wireframe_mobile.png)
 </details>
 
 #### Events and Saved Events Page
