@@ -160,43 +160,88 @@ I used Google Fonts to browse fonts that fit my theme.
 
 ### Wireframes
 
-I used [Balsamiq](https://balsamiq.com/wireframes/) to create the wireframes for this project
+I used [Figma](https://www.figma.com/) to create the wireframes for this project.
 
+* The desktop wireframes are tailored to the widely adopted screen resolution of 1920 x 1080, constituting 22.18% of screens.
+
+* The tablet wireframes are designed to fit the dimensions of the iPad Pro (1024 x 1366).
+
+* For mobile devices, the wireframes are crafted to the specifications of the iPhone SE, with dimensions set at 375 x 667.
 #### Home Page
 
-<details><summary>Click to view Home Page wireframes</summary>
-<img src="#">
+<details>
+<summary>Click to view Home Page wireframes</summary>
+
+#### Desktop
+![screenshot](documentation/wireframes/home_wireframe_desktop.png)
+#### Tablet
+![wireframe](documentation/wireframes/home_wireframe_tablet.png)
+#### Mobile
+![wireframe](documentation/wireframes/home_wireframe_mobile.png)
+
 </details>
 
 #### Sign Up Page
 
 <details><summary>Click to view Sign Up Page wireframes</summary>
-<img src="#">
+
+#### Desktop
+![screenshot](documentation/wireframes/signup_wireframe_desktop.png)
+#### Tablet
+![wireframe](documentation/wireframes/signup_wireframe_tablet.png)
+#### Mobile
+![wireframe](documentation/wireframes/signup_wireframe_mobile.png)
+
 </details>
 
 #### Login Page
 
 <details><summary>Click to view Login Page wireframes</summary>
-<img src="#">
+
+#### Desktop
+![screenshot](documentation/wireframes/login_wireframe_desktop.png)
+#### Tablet
+![wireframe](documentation/wireframes/login_wireframe_tablet.png)
+#### Mobile
+![wireframe](documentation/wireframes/login_wireframe_mobile.png)
+
 </details>
 
 #### Logout Page
 
 <details><summary>Click to view Logout Page wireframes</summary>
-<img src="#">
+
+#### Desktop
+![screenshot](documentation/wireframes/logout_wireframe_desktop.png)
+#### Tablet
+![wireframe](documentation/wireframes/logout_wireframe_tablet.png)
+#### Mobile
+![wireframe](documentation/wireframes/logout_wireframe_mobile.png)
 </details>
 
 #### Events and Saved Events Page
 
 <details><summary>Click to view Events and Saved Events wireframes</summary>
-<img src="#">
+
+#### Desktop
+![screenshot](documentation/wireframes/events_wireframe_desktop.png)
+#### Tablet
+![wireframe](documentation/wireframes/events_wireframe_tablet.png)
+#### Mobile
+![wireframe](documentation/wireframes/events_wireframe_mobile.png)
 </details>
 
 
 #### Event Details Page
 
 <details><summary>Click to view Event Details wireframes</summary>
-<img src="#">
+
+#### Desktop
+![screenshot](documentation/wireframes/event-details_wireframe_desktop.png)
+#### Tablet
+![wireframe](documentation/wireframes/event-details_wireframe_tablet.png)
+#### Mobile
+![wireframe](documentation/wireframes/event-details_wireframe_mobile.png)
 </details>
 
 ## Existing Features
