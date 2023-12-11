@@ -8,9 +8,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 
 
-
-
-
 class home(TemplateView):
     template_name = 'index.html'
 

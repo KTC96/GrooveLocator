@@ -13,7 +13,7 @@ class Event(models.Model):
     event_date = models.DateField(default=timezone.now)
     event_time = models.TimeField(null=True)
     event_details = models.TextField()
-    saved = models.ManyToManyField(User, related_name="saved", blank=True)
+    saved = models.ManyToManyField(User, related_name="saved", blank=True, default=False)
     image = CloudinaryField('image', default='placeholder')
     latitude = models.FloatField(max_length=200, null=True)
     longitude = models.FloatField(max_length=200, null=True)
@@ -30,14 +30,6 @@ class SavedEvent(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.event.title}"
-
-
-class Calendar(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    saved_events = models.ManyToManyField(Event, blank=True)
-
-    def __str__(self):
-        return f"{self.user.username}'s Calendar"
 
 
 class EventComment(models.Model):

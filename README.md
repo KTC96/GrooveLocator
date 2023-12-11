@@ -363,17 +363,25 @@ I wanted to include more features in my project which some of which I had planne
 ## Technologies
 ![My Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards?lineCount=3&line1=postgresql%2Cpostgresql%2C6cc7a1%3Bbootstrap%2Cbootstrap%2C7b86c0%3BCloudinary%2Ccloudinary%2C445677%3B&line2=django%2Cdjango%2C344312%3Bjavascript%2Cjavascript%2Cecf398%3Bpython%2Cpython%2C9b9ebf%3B&line3=html5%2Chtml5%2C73a4ea%3Bcss3%2Ccss3%2C8983cc%3B)
 
-  
+* HTML: Used for structuring the website's content.
+* CSS: Employed for designing and organizing the site's layout.
+* Bootstrap: Utilized as a CSS framework to establish an adaptive grid layout for responsiveness and to integrate preset styles and components.
+* Python + Django: Served as the backend development stack, providing a robust server-side foundation.
+* Javascript:
+   * Managed the display and interaction of the Google Maps API.
+   * Automated the closure of alert messages.
+   * Selectize Framework: Implemented to create an intelligent text input field with suggestions.
+* PostgreSQL: Chosen as the relational database management system.
+* ElephantSQL: Used to host the PostgreSQL database online.
+* Cloudinary: Employed for online storage of static files, contributing to the site's efficiency.
+* Figma: Played a key role in the project by facilitating the creation of wireframes.
+* GitHub + Git: Used for version control and code management.
+* RedKetchup Favicon Generator: Used to create various favicons for the site.
+* Canva: Used for designing the website logo.
+* WebAIM Contrast Checker: Ensured sufficient color contrast for accessibility.
+* Fontawesome: Used to incorporate a heart icon for saving events.
+* Heroku: Chosen as the hosting platform for the site.
+* WAVE: To evaluate the accessibility of the site. 
 
-
-
-    
-
-
-
-
-  
-
-
-
+## Database
 
