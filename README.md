@@ -38,6 +38,26 @@ I employed the Agile methodology and utilized a GitHub project board to organize
 
 </details>
 
+<details><summary>Issues List</summary>
+
+![issues](documentation/issues.png)
+</details>
+
+<details><summary>Project Board</summary>
+
+![project board](documentation/project_board.png)
+
+</details>
+
+### MoSCoW Prioritization
+
+I used MoSCow priotitization to organise each iteration of my project
+
+- **Must Have**: guaranteed to be delivered (*max 60% of stories*)
+- **Should Have**: adds significant value, but not vital (*the rest ~20% of stories*)
+- **Could Have**: has small impact if left out (*20% of stories*)
+- **Won't Have**: not a priority for this iteration
+
 
 #### Developer
 
@@ -384,4 +404,190 @@ I wanted to include more features in my project which some of which I had planne
 * WAVE: To evaluate the accessibility of the site. 
 
 ## Database
+
+I created an entity relationship diagram using [DrawSQL](https://drawsql.app/). This allowed me to plan out my database interactions more easily. 
+
+![entity relationship](documentation/entitiy_relationship.png)
+
+### Event Model
+
+| Field Name      | Field Type            | Relationship      |
+| --------------- | --------------------- | ----------------- |
+| id (PK)         | AutoField             |                   |
+| title           | CharField             |                   |
+| slug            | SlugField             |                   |
+| event_genre     | CharField             |                   |
+| event_price     | DecimalField          |                   |
+| event_location  | CharField             |                   |
+| event_venue     | CharField (nullable)  |                   |
+| event_date      | DateField             |                   |
+| event_time      | TimeField (nullable)  |                   |
+| event_details   | TextField             |                   |
+| saved           | ManyToManyField(User) | Many-to-Many with User |
+| image           | CloudinaryField       |                   |
+| latitude        | FloatField (nullable)  |                   |
+| longitude       | FloatField (nullable)  |                   |
+
+### Saved Event Model
+
+| Field Name | Field Type      | Relationship      |
+| ---------- | --------------- | ----------------- |
+| id (PK)    | AutoField       |                   |
+| user       | ForeignKey(User)| Many-to-One with User |
+| event      | ForeignKey(Event, related_name='saved_events') | Many-to-One with Event |
+
+### Event Comment
+
+| Field Name    | Field Type         | Relationship      |
+| ------------- | ------------------ | ----------------- |
+| id (PK)       | AutoField          |                   |
+| user          | ForeignKey(User)   | Many-to-One with User |
+| saved_event   | ForeignKey(SavedEvent) | Many-to-One with SavedEvent |
+| comment_text  | TextField          |                   |
+| hotel_details | TextField (nullable)|                   |
+| transport_details | TextField (nullable) |                 |
+| timestamp     | DateTimeField (auto_now_add=True) |             |
+
+### User
+
+* Allauth User Model
+* The User model was built using Django's Allauth library
+
+| Field Name   | Field Type              | Relationship      |
+| ------------ | ----------------------- | ----------------- |
+| id (PK)      | AutoField               |                   |
+| username     | CharField (from AbstractUser)|                 |
+| email        | EmailField (from AbstractUser)|                |
+| password     | CharField (from AbstractUser)|                |
+| ...          | ...                     |                   |
+| saved_events  | ManyToManyField(Event)  | Many-to-Many with Event |
+| comments     | ManyToManyField(EventComment) | Many-to-Many with EventComment |
+
+## Testing
+
+For all testing, please refer to the [TESTING.md](TESTING.md) file.
+
+## Deployment
+
+### Database Setup with ElephantSQL
+
+This project uses [ElephantSQL](https://www.elephantsql.com) for its PostgreSQL Database.
+
+### Steps to Obtain Your Postgres Database:
+
+1. Register using your GitHub account.
+2. Generate a new database instance by selecting **Create New Instance**.
+3. Provide a name (typically the project name: groovelocator).
+4. Choose the **Tiny Turtle (Free)** plan.
+5. Keep the **Tags** field empty.
+6. Pick the nearest **Region** and **Data Center**.
+
+
+### Cloudinary API for Media Assets
+
+To store media assets online, this project takes advantage of the Cloudinary API. This is especially advantageous since Heroku does not retain this category of data.
+
+### Steps to Obtain Your Cloudinary API Key:
+
+1. Register and log in to [Cloudinary](https://cloudinary.com).
+2. Indicate *Programmable Media for image and video API* as your *Primary interest*.
+3. Optionally, customize your assigned cloud name.
+4. Copy your **API Environment Variable** from the Cloudinary Dashboard.
+5. Remove `CLOUDINARY_URL=` from the API **value**; this acts as the **key**.
+
+
+### Heroku Deployment
+
+
+This project employs Heroku, a platform-as-a-service (PaaS) that empowers developers to construct, execute, and manage applications exclusively in the cloud.
+
+### Deployment Steps:
+
+1. After setting up your account, select **New** in the top-right corner of your Heroku Dashboard and choose **Create new app** from the dropdown menu.
+2. Ensure your app name is unique, choose a region (EU or USA), and select **Create App**.
+3. In the new app **Settings**, click **Reveal Config Vars** and set your environment variables:
+
+   | Key | Value |
+   | --- | --- |
+   | `CLOUDINARY_URL` | Insert your Cloudinary API key here |
+   | `DATABASE_URL` | Insert your ElephantSQL database URL here |
+   | `DISABLE_COLLECTSTATIC` | 1 (*temporary; can be removed for final deployment*) |
+   | `SECRET_KEY` | Any random secret key |
+
+4. Heroku requires two additional files for deployment: *requirements.txt* and *Procfile*.
+
+   Install project **requirements** using:
+   - `pip3 install -r requirements.txt`
+
+   Update the requirements file if needed:
+   - `pip3 freeze --local > requirements.txt`
+
+   Create the **Procfile**:
+   - `echo web: gunicorn app_name.wsgi > Procfile`
+   - Replace **app_name** with your primary Django app name.
+
+5. For Heroku deployment, connect your GitHub repository:
+
+   - Either choose **Automatic Deployment** from the Heroku app.
+   - Or in the Terminal/CLI, connect to Heroku using: `heroku login -i`
+   - Set the remote for Heroku: `heroku git:remote -a app_name` (replace *app_name* with your app name)
+   - After Git `add`, `commit`, and `push` to GitHub, type: `git push heroku main`
+
+6. The project should now be connected and deployed to Heroku!
+
+## Local Deployment
+
+
+This project can be cloned or forked in order to make a local copy on your own system.
+
+For either method, you will need to install any applicable packages found within the *requirements.txt* file.
+- `pip3 install -r requirements.txt`.
+
+You will need to create a new file called `env.py` at the root-level,
+and include the same environment variables listed above from the Heroku deployment steps.
+
+Sample `env.py` file:
+
+```python
+import os
+
+os.environ["DATABASE_URL"]='ElephantSQL database URL'
+os.environ["SECRET_KEY"]=" Your secret key"
+os.environ['CLOUDINARY_URL']='clouinary API key'
+os.environ['GOOGLE_API_KEY']='google maps API key'
+
+```
+
+Once the project is cloned or forked, in order to run it locally, you'll need to follow these steps:
+- Start the Django app: `python3 manage.py runserver`
+- Stop the app once it's loaded: `CTRL+C` or `⌘+C`
+- Make any necessary migrations: `python3 manage.py makemigrations`
+- Migrate the data to the database: `python3 manage.py migrate`
+- Create a superuser: `python3 manage.py createsuperuser`
+-  run the Django app: `python3 manage.py runserver`
+
+### Cloning
+
+Follow these steps to clone the repository:
+
+1. Visit the [GitHub repository](https://github.com/KTC96/GrooveLocator).
+2. Click on the "Code" button above the list of files.
+3. Choose your preferred cloning method (HTTPS, SSH, or GitHub CLI) and copy the URL.
+4. Open Git Bash or Terminal.
+5. Navigate to the directory where you want to clone the repository.
+6. In your IDE Terminal, enter the following command to clone the repository:
+   - `git clone https://github.com/KTC96/GrooveLocator.git`
+7. Press Enter to create your local clone.
+
+### Forking
+
+Forking the GitHub Repository allows you to create a copy on your GitHub account, enabling you to view and make changes without affecting the original owner's repository.
+
+Follow these steps to fork the repository:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/KTC96/GrooveLocator).
+2. Above the "Settings" Button on the menu, find the "Fork" Button.
+3. Click the "Fork" button, and you will now have a copy of the original repository in your own GitHub account!
+
+
 

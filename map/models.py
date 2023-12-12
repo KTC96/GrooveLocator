@@ -4,7 +4,7 @@ from django.utils import timezone
 from cloudinary.models import CloudinaryField
 
 class Event(models.Model):
-    title = models.CharField(max_length=250, unique=True, default="test")
+    title = models.CharField(max_length=250, unique=True, default="event")
     slug = models.SlugField(max_length=200, unique=True)
     event_genre = models.CharField(max_length=50)
     event_price = models.DecimalField(max_digits=10, decimal_places=2)
@@ -23,7 +23,7 @@ class Event(models.Model):
     
     def number_saved_event(self):
         return self.saved.count()
-
+ 
 class SavedEvent(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='saved_events')
