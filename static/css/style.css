@@ -1,6 +1,5 @@
 /* Global styles ---------------------------------------- */
 
-
 * {
   margin: 0;
     font-family: 'Roboto',
@@ -311,18 +310,9 @@ nav li {
   .infowindow-btn {
     font-size: 14px;
   }
-
-   body .event-list-img {
-     height: 300px;
-   }
-
-
 }
 
 @media (max-width: 768px) {
-  body .event-list-img {
-    height: 400px;
-  }
 
   .sign-up {
     max-width: 70%;
@@ -331,9 +321,6 @@ nav li {
   .user-image {
     height: 100%;
   }
-
-
-
 }
 
 /* Styles for smaller screens */
@@ -344,7 +331,6 @@ nav li {
 
   .login {
     min-width: 90%;
-    
   }
 
   .about-text {
@@ -373,8 +359,6 @@ nav li {
     font-size: 12px;
   }
 }
-
-
 
 /* Footer---------------------------------------- */
 
@@ -448,9 +432,7 @@ footer {
 /* Event_list---------------------------------------- */
 
 .event-list-img {
-  height: 350px;
-  /* object-fit: cover; */
-  width: 100%;
+  object-fit: cover;
   border-radius: 4px 4px 0 0;
   
 }

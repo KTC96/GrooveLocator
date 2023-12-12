@@ -1,5 +1,6 @@
 # GrooveLocator
-The Green Dragon Pub Quiz is an interactive, JavaScript-based quiz game that tests users' knowledge of The Lord of The Rings universe. The site provides visual and audio feedback depending on whether the correct or incorrect answer is selected. User high scores are also recorded alongside their username, creating a fun and competitive environment.
+GrooveLocator enhances your music discovery using the Google Maps API. Explore events visually with genre symbols, making it easy to find what you love. Customize searches by date, city, and genre. Save events with notes, hotel, and transport details for seamless planning. GrooveLocator simplifies your journey through the live music scene, offering a practical map of musical adventures. 
+
 <br>
 ![GrooveLocator](documentation/responsive.png)
 
@@ -396,10 +397,7 @@ I wanted to include more features in my project which some of which I had planne
 * Cloudinary: Employed for online storage of static files, contributing to the site's efficiency.
 * Figma: Played a key role in the project by facilitating the creation of wireframes.
 * GitHub + Git: Used for version control and code management.
-* RedKetchup Favicon Generator: Used to create various favicons for the site.
-* Canva: Used for designing the website logo.
 * WebAIM Contrast Checker: Ensured sufficient color contrast for accessibility.
-* Fontawesome: Used to incorporate a heart icon for saving events.
 * Heroku: Chosen as the hosting platform for the site.
 * WAVE: To evaluate the accessibility of the site. 
 
@@ -588,6 +586,42 @@ Follow these steps to fork the repository:
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/KTC96/GrooveLocator).
 2. Above the "Settings" Button on the menu, find the "Fork" Button.
 3. Click the "Fork" button, and you will now have a copy of the original repository in your own GitHub account!
+
+## Credits
+
+### Code
+
+| Source | Location | Notes |
+| --- | --- | --- |
+|[ticketmaster Discovery API](https://developer.ticketmaster.com/products-and-docs/tutorials/events-search/search_events_in_location.html)  | Home page map | Used this tutorial to set up my google maps API|
+|[Google Maps custom markers](https://developers.google.com/maps/documentation/javascript/custom-markers) | Home page map | I used this tutorial to set up custom markers for my map for each genre |
+| Code Institute | Events and saved events | Used pagination to display events across multiple pages |
+| Code Institute | Saved Events, Home | Auto dismiss bootstrap alerts |
+| [Stack Overflow](https://stackoverflow.com/questions/110378/change-the-width-of-form-elements-created-with-modelform-in-django) | Event details/ forms.py | Increase the size of text input fields (Third approach detailed by zuber)|
+| [Bootstrap](https://getbootstrap.com/docs/5.3/components/navbar/#nav) | Navigation | I used bootstrap as a starting block for my responsive navigation bar |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/)  | Events and saved events| Fix bug whereby if events not divisible by 3 they would not always fill up a row |
+| Code Institute | Event Details | Used similar code for saving a blog post for the user to save an event |
+| Code Institute | Event Details, Saved Events, Events | Code for displaying a placeholder image if no image available |
+| [Selectize](https://selectize.dev/docs/usage)| Events | Followed documentation to set up selectize search box |
+| [Google Maps custom infowindows](https://developers.google.com/maps/documentation/javascript/infowindows) | Home | Create custom infowindows and close when another is clicked on |
+### Content
+
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Canva](https://www.canva.com/)| All pages | I used canva for the logo design|
+| [RedKetchup Favicon Generator](https://redketchup.io/favicon-generator) | All pages | Used to create a range of favicon sizes |
+| [Unsplash](https://unsplash.com/)| Home, Events, Login, Signup, Logout | I used unsplash for event images, user profiles and the background for authentication pages |
+| [Fontawesome](https://fontawesome.com/) | All pages | I used font awesome icons in the footer for links to social media and for the heart icon to save events|
+
+
+### Acknowledgements
+
+
+
+
+
+
+
 
 
 
