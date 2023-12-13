@@ -29,7 +29,7 @@
                 <!-- Card body with event details and link to event details page -->
                 <div class="card-body">
                     <a href="{% url 'event_details' event.slug%}">
-                        <h5 class="card-title">{{ event.title }}</h5>
+                        <h2 class="card-title">{{ event.title }}</h2>
                         <p class="card-text">Date: {{ event.event_date }}</p>
                         <p class="card-text">{{ event.event_location }}</p>
                     </a>
