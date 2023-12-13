@@ -60,9 +60,25 @@ I have used the [CI Python Linter](https://pep8ci.herokuapp.com) to validate my 
 
 ## Lighthouse
 
-| Page | Device | Screenshot | Notes |
-| --- | --- | --- | --- |
-| Home (Logged) | Desktop |  |  |
+| Page | Device | Screenshot|
+| --- | --- | --- |
+| Home (Logged In) | Desktop | ![home](documentation/testing/lighthouse_home_logged_in_desktop.png)  |
+| Home (Logged In) | Mobile | ![home](documentation/testing/lighthouse_home_logged_in_mobile.png)  |
+| Home (Logged Out) | Desktop | ![home](documentation/testing/lighthouse_home_logged_out_desktop.png)  |
+| Home (Logged Out) | Mobile | ![home](documentation/testing/lighthouse_home_logged_out_mobile.png)  |
+| Events List | Desktop | ![Events List](documentation/testing/lighthouse_events_list_desktop.png)  |
+| Events List | Mobile | ![Events List](documentation/testing/lighthouse_events_list_mobile.png)  |
+| Event details (Logged In) | Desktop | ![Event Details](documentation/testing/lighthouse_event_details_logged_in_desktop.png)  |
+| Event details (Logged In) | Mobile | ![Event Details](documentation/testing/lighthouse_event_details_logged_in_mobile.png)  |
+| Event details (Logged Out) | Desktop | ![Event Details](documentation/testing/lighthouse_event_details_logged_out_desktop.png)  |
+| Event details (Logged Out) | Mobile | ![Event Details](documentation/testing/lighthouse_event_details_logged_out_desktop.png)  |
+| Login | Desktop | ![Login](documentation/testing/lighthouse_login_desktop.png)  |
+| Login | Mobile | ![Login](documentation/testing/lighthouse_login_mobile.png)  |
+| Logout | Desktop | ![Logout](documentation/testing/lighthouse_logout_desktop.png)  |
+| Logout | Mobile | ![Logout](documentation/testing/lighthouse_logout_mobile.png)  |
+| Sign Up| Desktop | ![Sign Up](documentation/testing/lighthouse_signup_desktop.png)  |
+| Sign Up| Mobile | ![Sign Up](documentation/testing/lighthouse_signup_mobile.png)  |
+
 
 
 
