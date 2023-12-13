@@ -10,11 +10,14 @@ class CommentForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(CommentForm, self).__init__(*args, **kwargs)
 
-       
-        self.fields['hotel_details'].widget.attrs['rows'] = 3  
-        self.fields['hotel_details'].widget.attrs['cols'] = 40 
-        self.fields['hotel_details'].widget.attrs['placeholder'] = 'Your hotel details will be securely stored here upon saving.'
+        self.fields['hotel_details'].widget.attrs['rows'] = 3
+        self.fields['hotel_details'].widget.attrs['cols'] = 40
+        self.fields['hotel_details'].widget.attrs['placeholder'] = (
+            'Your hotel details will be securely stored here upon saving.'
+        )
 
         self.fields['transport_details'].widget.attrs['rows'] = 3
         self.fields['transport_details'].widget.attrs['cols'] = 40
-        self.fields['transport_details'].widget.attrs['placeholder'] = 'Your transport details will be securely stored here upon saving.'
+        self.fields['transport_details'].widget.attrs['placeholder'] = (
+            'Your transport details will be securely stored here upon saving.'
+        )

@@ -9,10 +9,10 @@
     {% if "placeholder" in event.image.url %}
     <img class="event-details-image"
       src="https://images.pexels.com/photos/1763067/pexels-photo-1763067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-      alt="Placeholder Image" width="60%" height="100%">
+      alt="Placeholder Image">
     {% else %}
     <!-- Display event image if available -->
-    <img class="event-details-image" src="{{ event.image.url }}" alt="{{ event.title }}" width="60%" height="100%">
+    <img class="event-details-image" src="{{ event.image.url }}" alt="{{ event.title }}">
     {% endif %}
   </div>
   <div class="col-lg-6 event-text">
@@ -57,13 +57,14 @@
 <!-- Additional event information -->
 <div class="row event-info g-0 p-0">
   <div class="col-lg-6 event-text">
-    <span>
+    <div>
       <!-- Display number of users interested, event date, time, and ticket price -->
       <h3>Groovers Interested: {{ event.number_saved_event }}</h3>
       <p> Date: {{event.event_date }}</p>
       <p> Time: {{ event.event_time}}</p>
       <p> Ticket Price £{{ event.event_price }}</p>
-    </span>
+    </div>
+    
 
     <!-- Add event details section (for authenticated users who have saved the event) -->
     <div class="col-lg-12 add-details">

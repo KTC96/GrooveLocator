@@ -1,0 +1,38 @@
+# Testing
+
+## Code validation
+
+### HTML
+
+I used [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
+
+Because my project uses Jinja syntax, I copied source data from each page and validated by input.
+
+
+| Page | Screenshot | Notes |
+| --- | --- | --- |
+|Home Logged Out  | ![Home](documentation/testing/home_logged_out.png)|Pass |
+|Home Logged In  | ![Home](documentation/testing/home_logged_in.png)|Pass |
+|Login | ![Login](documentation/testing/login_page.png)|Pass |
+|Sign up|   ASK MENTOR|Fail |
+|Logout  | ![Logout](documentation/testing/signout_page.png)|Pass |
+|Events Logged Out  | ![Events](documentation/testing/events_logged_out.png)|Pass |
+|Events Logged In  | ![Events](documentation/testing/events_logged_in.png)|Pass |
+|Saved Events | ![Events](documentation/testing/saved_events_logged_in.png)|Pass |
+|Event Details Logged Out | ![Events](documentation/testing/event_details_logged_out.png)|Pass |
+|Event Details Logged In | ![Events](documentation/testing/event_details_logged_in.png)|Pass |
+
+
+### CSS
+
+
+### Javascript
+
+### Python
+
+| File | Screenshot | Notes |
+| settings.py | --- | --- |
+
+
+
+

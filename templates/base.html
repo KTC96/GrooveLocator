@@ -36,6 +36,14 @@
 
   <!-- Document title -->
   <title>Groove Locator</title>
+
+  {% if user.is_authenticated %}
+  <style>
+    #map {
+      height: 65vh;
+    }
+  </style>
+  {% endif %}
 </head>
 
 <body>

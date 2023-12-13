@@ -399,6 +399,12 @@ footer {
   justify-content: center;
 }
 
+.event-details-image {
+  width:60%;
+  height:100%;
+  object-fit: cover;
+}
+
 .add-details label {
   color: black;
 }
