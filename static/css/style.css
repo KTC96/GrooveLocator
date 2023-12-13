@@ -2,8 +2,7 @@
 
 * {
   margin: 0;
-    font-family: 'Roboto',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -20,8 +19,7 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  color:white;
-  
+  color:white; 
 }
 
 .navbar-toggler {
@@ -97,7 +95,6 @@ nav li {
 #map {
   width: 100vw;
   height: 50vh;
-
 }
 
 .join-btn {
@@ -148,7 +145,6 @@ nav li {
   background-color: white !important;
 }
 
-
 .user-testimonials {
   display: flex;
   align-items: center;
@@ -157,13 +153,11 @@ nav li {
 
 .user-card {
   height: 100%;
-  
 }
 
 .user-image {
   height: 250px;
   object-fit:cover;
-  
 }
 
 .user-name {
@@ -194,7 +188,6 @@ nav li {
 .infowindow-style {
   color: white;
   margin: 10px 0 10px 0;
- 
 }
 
 .infowindow-btn {
@@ -241,7 +234,6 @@ nav li {
   text-align: center;
   color: white;
   margin: 10px 0 0 0;
- 
 }
 
 .authentication-img {
@@ -278,88 +270,6 @@ nav li {
   font-size: 13px;
 }
 
-
-/* Styles for medium screens */
-@media (max-width: 1143px) {
-
-  .about-text {
-    font-size: 16px;
-  }
-
-  .main-heading {
-     font-size: 40px;
-  }
-
-  .secondary-heading {
-    font-size: 30px;
-  }
-
-  .event-text {
-    padding-left: 50px;
-  
-  }
-
-  .infowindow-style h2 {
-    font-size: 20px;
-  }
-
-  .infowindow-style p {
-    font-size: 15px;
-  }
-
-  .infowindow-btn {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 768px) {
-
-  .sign-up {
-    max-width: 70%;
-  }
-
-  .user-image {
-    height: 100%;
-  }
-}
-
-/* Styles for smaller screens */
-@media (max-width: 576px) {
-  .sign-up {
-    max-width: 90%;
-  } 
-
-  .login {
-    min-width: 90%;
-  }
-
-  .about-text {
-    font-size: 14px;
-  }
-
-  .main-heading {
-    font-size: 32px ;
-  }
-
-  .secondary-heading {
-    font-size: 25px;
-  }
-
-  .infowindow-style h2 {
-    font-size: 15px;
-    padding: 0 5px 0 5px;
-  }
-  .infowindow-style p {
-    font-size: 12px;
-  }
-  .infowindow-style {
-    margin: 5px 0 5px 0;
-  }
-  .infowindow-btn {
-    font-size: 12px;
-  }
-}
-
 /* Footer---------------------------------------- */
 
 footer {
@@ -389,7 +299,6 @@ footer {
 .email {
   color: white;
 }
-
 
 /* Event_details---------------------------------------- */
 
@@ -443,7 +352,6 @@ footer {
 .event-list-img {
   object-fit: cover;
   border-radius: 4px 4px 0 0;
-  
 }
 
 .event:hover {
@@ -460,7 +368,6 @@ footer {
   margin: 20px 20px 20px 0;
   padding: 0;
 }
-
 
 .filter-form form {
   display: flex;
@@ -483,7 +390,7 @@ footer {
 }
 
 
-/* Error page---------------------------------------- */
+/* Error pages---------------------------------------- */
 
 .error-page-content {
   width: 50%;
@@ -506,5 +413,93 @@ footer {
   justify-content: center;
   align-items: center;
   height: 60vh;
+}
+
+/* Media Queries---------------------------------------- */
+
+/* Styles for medium screens */
+@media (max-width: 1143px) {
+
+  .about-text {
+    font-size: 16px;
+  }
+
+  .main-heading {
+     font-size: 40px;
+  }
+
+  .secondary-heading {
+    font-size: 30px;
+  }
+
+  .event-text {
+    padding-left: 50px;
+  }
+
+  .infowindow-style h2 {
+    font-size: 20px;
+  }
+
+  .infowindow-style p {
+    font-size: 15px;
+  }
+
+  .infowindow-btn {
+    font-size: 14px;
+  }
+}
+
+
+
+/* Styles for smaller screens */
+@media (max-width: 576px) {
+  .sign-up {
+    max-width: 90%;
+  } 
+
+  .login {
+    min-width: 90%;
+  }
+
+  .about-text {
+    font-size: 14px;
+  }
+
+  .main-heading {
+    font-size: 32px ;
+  }
+
+  .secondary-heading {
+    font-size: 25px;
+  }
+
+  .infowindow-style h2 {
+    font-size: 15px;
+    padding: 0 5px 0 5px;
+  }
+  .infowindow-style p {
+    font-size: 12px;
+  }
+  
+  .infowindow-style {
+    margin: 5px 0 5px 0;
+  }
+
+  .infowindow-btn {
+    font-size: 12px;
+  }
+}
+
+/* Additional Media queries */
+
+@media (max-width: 768px) {
+
+  .sign-up {
+    max-width: 70%;
+  }
+
+  .user-image {
+    height: 100%;
+  }
 }
  

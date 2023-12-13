@@ -11,5 +11,4 @@ urlpatterns = [
         views.SaveEvent.as_view(),
         name='save_event'
     )
-
 ]

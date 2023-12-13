@@ -86,8 +86,6 @@
             </div>
         </div>
     </div>
-    
-
 <script>
     //Initialize Google Map
     function initMap() {
@@ -137,7 +135,6 @@
         // Update events array based on the selected genre and date
         var selectedGenre = "{{ selected_genre }}";
       
-
         if (selectedGenre) {
             events = events.filter(function (event) {
                 return (!selectedGenre || event.event_genre === selectedGenre);
@@ -145,7 +142,6 @@
             });
         }
      
-
         // Create markers for the updated events
         for (var i = 0; i < events.length; i++) {
             createMarker(events[i]);
@@ -273,7 +269,6 @@
     </div>
     {% endif %}
 </section>
-
 
 <!--Google Maps API-->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDLv6foLba6R_4ZlNosCqsZft_U8ruFEE&callback=initMap" async
