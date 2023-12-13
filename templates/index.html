@@ -5,7 +5,7 @@
         <div class="filter-form container m-0 p-3">
             <form class="form-inline" method="get" action="{% url 'home' %}">
                 <div class="form-group">
-                    <div class="title">Select Genre:</div>
+                    <label for="event_genre">Choose a Genre:</label>
                     <select class="form-control" name="event_genre" id="event_genre">
                         <option value="" {% if not selected_genre %}selected{% endif %}>All Genres</option>
                         {% for genre in all_genres %}
