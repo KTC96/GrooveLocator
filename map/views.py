@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 
 
-class home(TemplateView):
+class Home(TemplateView):
     template_name = 'index.html'
 
     def get_queryset(self):

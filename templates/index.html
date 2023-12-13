@@ -131,16 +131,15 @@
 
         // Update events array based on the selected genre and date
         var selectedGenre = "{{ selected_genre }}";
-        var selectedDate = "{{ selected_date }}";
+        
 
         if (selectedGenre || selectedDate) {
             events = events.filter(function (event) {
-                return (!selectedGenre || event.event_genre === selectedGenre) &&
-                       (!selectedDate|| event.event_date === selectedDate);
+                return (!selectedGenre || event.event_genre === selectedGenre);
+                       
             });
         }
      
-
         // Create markers for the updated events
         for (var i = 0; i < events.length; i++) {
             createMarker(events[i]);
