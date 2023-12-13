@@ -3,8 +3,9 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from cloudinary.models import CloudinaryField
 
-
 class Event(models.Model):
+    # Model representing an event
+
     title = models.CharField(max_length=250, unique=True, default="event")
     slug = models.SlugField(max_length=200, unique=True)
     event_genre = models.CharField(max_length=50)
@@ -32,6 +33,8 @@ class Event(models.Model):
 
 
 class SavedEvent(models.Model):
+    # Model representing a saved event by a user
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     event = models.ForeignKey(
         Event,
@@ -44,6 +47,8 @@ class SavedEvent(models.Model):
 
 
 class EventComment(models.Model):
+    # Model representing a comment on a saved event
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     saved_event = models.ForeignKey(SavedEvent, on_delete=models.CASCADE)
     comment_text = models.TextField()
