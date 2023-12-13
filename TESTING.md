@@ -45,6 +45,7 @@ I have used the [CI Python Linter](https://pep8ci.herokuapp.com) to validate my 
 
 | Page | Device | Screenshot | Notes |
 | --- | --- | --- | --- |
+| Home (Logged Out) | Desktop |  |  |
 
 
 
