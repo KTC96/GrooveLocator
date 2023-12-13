@@ -36,13 +36,13 @@
         {% csrf_token %}
         {% if saved %}
         <!-- Display filled heart icon if the event is saved -->
-        <button type="submit" name="save_id" value="{{event.slug}}" class="btn-like">
+        <button type="submit" name="save_id" value="{{event.slug}}" class="btn-like" aria-label="Filled in heart icon(saved)">
           <i class="fa-solid fa-heart"></i>
         </button>
         <p class="text-white d-inline">Click to un-save this event</p>
         {% else %}
         <!-- Display empty heart icon if the event is not saved -->
-        <button type="submit" name="save_id" value="{{event.slug}}" class="btn-like">
+        <button type="submit" name="save_id" value="{{event.slug}}" class="btn-like" aria-label="Unfilled heart icon(not saved)">
           <i class="fa-regular fa-heart"></i>
         </button>
         <p class="text-white d-inline">Click to save this event</p>
@@ -76,7 +76,7 @@
         <p class="d-inline-flex gap-1">
           <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
             data-bs-target="#collapseExample{{ event.id }}" aria-expanded="false"
-            aria-controls="collapseExample{{ event.id }}">
+            aria-controls="collapseExample{{ event.id }}" aria-label="add your event details">
             Add your event details
           </button>
         </p>
