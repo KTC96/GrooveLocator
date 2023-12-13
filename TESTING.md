@@ -25,6 +25,23 @@ Because my project uses Jinja syntax, I copied source data from each page and va
 
 ### CSS
 
+<p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!">
+    </a>
+</p>
+<p>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+    <img style="border:0;width:88px;height:31px"
+        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="Valid CSS!">
+    </a>
+</p>
+        
+      
+
 
 ### Javascript
 
@@ -45,7 +62,7 @@ I have used the [CI Python Linter](https://pep8ci.herokuapp.com) to validate my 
 
 | Page | Device | Screenshot | Notes |
 | --- | --- | --- | --- |
-| Home (Logged Out) | Desktop |  |  |
+| Home (Logged) | Desktop |  |  |
 
 
 
