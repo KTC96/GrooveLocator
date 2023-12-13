@@ -30,8 +30,22 @@ Because my project uses Jinja syntax, I copied source data from each page and va
 
 ### Python
 
+I have used the [CI Python Linter](https://pep8ci.herokuapp.com) to validate my Python files.
+
 | File | Screenshot | Notes |
-| settings.py | --- | --- |
+| --- | --- | --- |
+| settings.py | ![settings](documentation/testing/settings.png) | Pass|
+| models.py | ![models](documentation/testing/models.png) | Pass |
+| urls.py (GrooveLocator) | ![urls](documentation/testing/main_urls.png) | Pass |
+| urls.py (Map) | ![urls](documentation/testing/urls_map.png) | Pass |
+| views.py (Map) | ![views](documentation/testing/views.png) | Pass |
+| forms.py | ![forms](documentation/testing/forms.png) | Pass |
+
+## Lighthouse
+
+| Page | Device | Screenshot | Notes |
+| --- | --- | --- | --- |
+
 
 
 
