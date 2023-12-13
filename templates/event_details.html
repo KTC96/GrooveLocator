@@ -84,7 +84,7 @@
           <div class="card card-body">
             <form method="post">
               {{ comment_form | crispy }} {% csrf_token %}
-              <button type="submit" class="btn btn-signup btn-lg btn-primary mt-2">
+              <button type="submit" class="btn btn-signup btn-lg btn-primary mt-2" aria-label="save button">
                 Save
               </button>
             </form>
