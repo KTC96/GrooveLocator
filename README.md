@@ -2,29 +2,10 @@
 GrooveLocator enhances your music discovery using the Google Maps API. Explore events visually with genre symbols, making it easy to find what you love. Customize searches by date, city, and genre. Save events with notes, hotel, and transport details for seamless planning. GrooveLocator simplifies your journey through the live music scene, offering a practical map of musical adventures. 
 
 <br>
+
 ![GrooveLocator](documentation/responsive.png)
 
-## [Link to live site](https://groove-locator-1cf946ce6f56.herokuapp.com/)
-
-## Contents
-
-1. [User Experience](#user-experience)
-   * [User Stories](#user-stories)
-2. [Design](#design)
-   * [Colour Scheme](#colour-scheme)
-   * [Typography](#typography)
-   * [Wireframes](#wireframes)
-3. [Features](#features)
-   * [Future Implementations](#future-implementations)
-   * [Accessibility](#accessibility)
-4. [Technologies](#technologies)
-   * [Languages](#languages)
-   * [Frameworks, Libraries and Programs](#frameworks-libraries-and-programs)
-5. [Testing](#testing)
-6. [Deployment](#deployment)
-7. [Credits](#credits)
-   * [Code](#code)
-   * [Content](#c)
+### [Link to live site](https://groove-locator-1cf946ce6f56.herokuapp.com/)
 
 ## User Experience
 
@@ -604,6 +585,8 @@ Follow these steps to fork the repository:
 | Code Institute | Event Details, Saved Events, Events | Code for displaying a placeholder image if no image available |
 | [Selectize](https://selectize.dev/docs/usage)| Events | Followed documentation to set up selectize search box |
 | [Google Maps custom infowindows](https://developers.google.com/maps/documentation/javascript/infowindows) | Home | Create custom infowindows and close when another is clicked on |
+| [YouTube](https://www.youtube.com/watch?v=h39eMGWmEV4&t=36s) | Home | I followed this tutorial to help me pass backend data to JavaScript|
+| [YouTube](https://www.youtube.com/watch?v=yc2olxLgKLk&t) | All | I followed this tutorial to help get my footer to stay at the bottom of my page when there was not enough content|
 ### Content
 
 | Source | Location | Notes |
