@@ -28,5 +28,6 @@
   "cSpell.words": ["groovelocator", "herokuapp", "Summernote"],
   "[html]": {
     "editor.defaultFormatter": "HookyQR.beautify"
-  }
+  },
+  "editor.formatOnPaste": false
 }

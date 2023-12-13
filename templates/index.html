@@ -14,9 +14,11 @@
                         {% endfor %}
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary mt-4 filter-btn">Filter</button>
+                <button type="submit" class="btn btn-primary mt-4 filter-btn p-2">Filter</button>
             </form>
         </div>
+        <button id="getLocationBtn" class="btn btn-primary m-3">Get My Location</button>
+
             <!--Google map-->
             <div class="col-12 col-lg-9" id="map"></div>
             <div class="col-12 col-lg-3">
@@ -79,43 +81,39 @@
                 </div>
             </div>
         </div>
+    </div>
     
-
-
-
 
 <script>
     function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
             center: {
-                lat: 0,
-                lng: 0
+                lat: 52.923787243580904, 
+                lng: -1.4720381434100926
             },
-            zoom: 10
+            zoom:6
         });
 
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                var userLatLng = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                };
-                map.setCenter(userLatLng);
+        function requestUserLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var userLatLng = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                     };
+                    map.setCenter(userLatLng);
+                    map.setZoom(10);
             }, function () {
                 handleLocationError(true, map.getCenter());
             });
-        } else {
-            handleLocationError(false, map.getCenter());
+            } else {
+                handleLocationError(false, map.getCenter());
+            }
         }
-
-        function handleLocationError(browserHasGeolocation, pos) {
-            var infoWindow = new google.maps.InfoWindow();
-            infoWindow.setPosition(pos);
-            infoWindow.setContent(browserHasGeolocation ?
-                'Error: The Geolocation service failed.' :
-                'Error: Your browser doesn\'t support geolocation.');
-            infoWindow.open(map);
-        }
+        // Attach the location request to the button click
+        document.getElementById('getLocationBtn').addEventListener('click', function () {
+            requestUserLocation();
+        });
 
         var events = [
             {% for event in events %}
