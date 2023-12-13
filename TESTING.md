@@ -40,10 +40,12 @@ Because my project uses Jinja syntax, I copied source data from each page and va
     </a>
 </p>
         
-      
-
-
 ### Javascript
+
+My current implementation combines JavaScript with Jinja and Django template language, which complicates the validation process. To enhance the structure for future iterations, I intend to separate my JavaScript code into dedicated files. Additionally, I plan to securely pass the Google Maps API key through a Django view.
+
+Despite this, thorough inspection using Google Dev Tools in the browser console reveals no errors related to my JavaScript code.
+
 
 ### Python
 
@@ -78,6 +80,18 @@ I have used the [CI Python Linter](https://pep8ci.herokuapp.com) to validate my 
 | Logout | Mobile | ![Logout](documentation/testing/lighthouse_logout_mobile.png)  |
 | Sign Up| Desktop | ![Sign Up](documentation/testing/lighthouse_signup_desktop.png)  |
 | Sign Up| Mobile | ![Sign Up](documentation/testing/lighthouse_signup_mobile.png)  |
+
+## Defensive Programming 
+
+| Page | User Action | Expected Result | Pass/Fail | Comments |
+| --- | --- | --- | --- | --- |
+| Home | Click on Logo | Redirection to Home page | Pass | |
+| Home | Click  on "Get my location" | Map gets geolocation data and zooms on your area | Pass | |
+| Home | Click on the "Choose a genre dropdown" | A dropdown of available genres can be seen | Pass | |
+| Home | Click on the filter button after choosing a genre | The map repopulates only with events that match that genre | Pass | |
+| Home | Click on the "toggle legend" button| The legend opens displaying icons and associated genres | Pass | |
+| Home | Click on event icon on the map | The infowindow for the event opens with relevant information | Pass | |
+| Home | Click on "event details" within an open infowindow | The user is redirected to the event details for that event  | Pass | |
 
 
 
