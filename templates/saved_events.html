@@ -66,14 +66,15 @@
     </nav>
     {% endif %}
 </div>
+
+<!-- Auto-dismiss messages after 3 seconds , taken from Code institute blog walkthrough-->
+<script>
+    setTimeout(function () {
+      let messages = document.getElementById("msg");
+      let alert = new bootstrap.Alert(messages);
+      alert.close();
+    }, 3000);
+  </script>
 {% endblock %}
 
-<!-- jQuery script to initialize the Selectize plugin for the location input -->
-<script>
-    $(document).ready(function () {
-        $('#event_location').selectize({
-            create: true,
-            sortField: 'text'
-        });
-    });
-</script>
+

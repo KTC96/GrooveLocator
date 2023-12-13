@@ -275,6 +275,13 @@ integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4Qz
 <!--Jquery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <!-- Auto-dismiss messages after 3 seconds , taken from Code institute blog walkthrough-->
+<script>
+    setTimeout(function () {
+      let messages = document.getElementById("msg");
+      let alert = new bootstrap.Alert(messages);
+      alert.close();
+    }, 3000);
+  </script>
 
 {% endblock %}
 
