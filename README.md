@@ -258,9 +258,15 @@ I used [Figma](https://www.figma.com/) to create the wireframes for this project
 
    ![home](documentation/home_returning_user.png)
 
+   * The user can open up the legend to understand the meaning of the symbols which they can see displayed for events on the map.
+
    ![home](documentation/home_events.png)
 
+   * This shows the map filtered for just Techno events, as you can see only the relevant symbol is displayed on the map.
+
    ![home](documentation/home_filtered.png)
+
+   * An open infowindow which displays event information and a button which links to the event details page.
 
    ![home](documentation/home_infowindow.png)
 
@@ -292,9 +298,12 @@ I used [Figma](https://www.figma.com/) to create the wireframes for this project
 ### Events
    * The events page displays cards for each event in date descending order and provides the option to filter events based on genre, city and date.
 
-   ADD SCREENSHOT AFTER MORE EVENTS ADDED
+   ![events](documentation/events_page.png)
+
+  
 
 #### Filtered Event
+* This screenshot shows the functionality of filtering events and only displaying relevant ones.
 
 ![Event list](documentation/event_list_filtering.png)
 
@@ -302,17 +311,24 @@ I used [Figma](https://www.figma.com/) to create the wireframes for this project
 ### Event Details
 
 #### New User
+
+* A new user can see event details but cannot save or add information to their events
+
 ![Event Details](documentation/event_details_newuser.png)
 
+* A returning user is able to save events and add details about their hotel and transport.
 #### Returning User
 ![Event Details](documentation/event_details_returning_user.png)
 
+* Events saved by the user are displayed here.
 ### Saved Events
 ![Saved Events](documentation/saved_events.png)
 
+* If the user is yet to save any events, a notification is displayed.
 #### No Saved Events
 ![Saved Events](documentation/saved_events_none.png)
 
+* These are the error pages displayed 
 ### Error Pages
 ![Error](documentation/403.png)
 ![Error](documentation/404.png)
@@ -599,6 +615,12 @@ Follow these steps to fork the repository:
 
 ### Acknowledgements
 
+I would like to thank my mentor Jack for his help during this project, and also my parents for supporting me on this career changing journey. 
+
+
+### Footnote
+
+The events listed on the screenshots are not the same that are currently on the site due to a database issue near the end of my project.
 
 
 

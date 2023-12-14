@@ -181,7 +181,7 @@ I have used the [CI Python Linter](https://pep8ci.herokuapp.com) to validate my 
 | As a user with accessibility needs, I can easily access and use the website using a screen reader so that I can use and enjoy the site. | Pass |
 | As a site admin, I can create events so that I can efficiently manage and coordinate events. | Pass |
 | As a developer, I can link to the google maps api so that I can display event data visually. | Pass |
-| As a user, I can add details of my hotels/ travel to my saved events so that I can be organised and choose which events I would like to attend. | Pass |
+| As a user, I can add details of my hotels/ travel to my saved events so that I can be organized and choose which events I would like to attend. | Pass |
 | As a user, I can also save an event using the map so that I can easily find and save events I would like to go to. | Fail (Listed as Won't have) |
 | As a user, I can only access the saved events if I am logged in so that I can have a good user experience.| Pass |
 | As a user, I can view and use the web app on all screen sizes so that I can change my device and access the app. | Pass |
@@ -216,6 +216,8 @@ The list of bugs can be found in my Git Hub project board.
 | The events on the saved events page are not listed in date order  |
 | The alerts do not auto-dismiss because they were giving me a console error so this functionality was removed |
 | The input fields for login/ signup are too wide. This is so their associated headings are centralized. But I aim to fix this in the future |
+
+
 
 
 
