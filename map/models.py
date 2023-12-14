@@ -15,11 +15,9 @@ class Event(models.Model):
     event_date = models.DateField(default=timezone.now)
     event_time = models.TimeField(null=True)
     event_details = models.TextField()
-    saved = models.ManyToManyField(
-        User,
+    saved = models.ManyToManyField(User,
         related_name="saved",
         blank=True,
-        default=False
     )
     image = CloudinaryField('image', default='placeholder')
     latitude = models.FloatField(max_length=200, null=True)

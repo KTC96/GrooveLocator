@@ -350,8 +350,27 @@ footer {
 /* Event_list---------------------------------------- */
 
 .event-list-img {
+  height: 350px;
   object-fit: cover;
+  width: 100%;
   border-radius: 4px 4px 0 0;
+}
+
+.card-title {
+  font-size: 20px;
+}
+
+.page-link {
+  background-color: #6600cc;
+  border-color: #6600cc;
+  color: white;
+  border-radius: 5px;;
+}
+
+.page-link:hover {
+  background-color: #521093;
+  color: white;
+  border-color: #521093;
 }
 
 .event:hover {
